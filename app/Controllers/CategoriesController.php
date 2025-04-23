@@ -55,12 +55,31 @@ class CategoriesController extends ResourceController
     }
 
     public function update($id = null){
-        $data = $this->request->getJSON(true);
-        if ($this->categoriesModel->update($id, $data)) {
-            return $this->respond(['message' => 'Se ha actualizado correctamente', 'status'=>200]);
-        } else {
-            return $this->failValidationErrors($this->categoriesModel->errors());
+        $name = $this->request->getPost('name');
+        $file = $this->request->getFile('image');
+       
+        $uploadPath = FCPATH . 'uploads/images/categories/';
+        if (!is_dir($uploadPath)) {
+            mkdir($uploadPath, 0777, true);
         }
+
+        if ($file && $file->isValid() && !$file->hasMoved()) {
+            $fileName = $file->getRandomName();
+            $file->move($uploadPath, $fileName);
+        }
+
+        $this->categoriesModel->update($id,[
+            'name' => $name,
+            'image'=> $fileName,
+            'url' => 'uploads/images/categories/' . $fileName
+        ]);
+
+        return $this->respond([
+            'message' => 'Categoría actualizada correctamente',
+            'files' => $fileName,
+            'status' => 200
+
+        ], 200);
     }
 
     public function deactivateCategory($id = null){
@@ -85,5 +104,6 @@ class CategoriesController extends ResourceController
             return $this->failNotFound('Categoría no encontrada');
         }
     }
+
 
 }

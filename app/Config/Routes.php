@@ -31,7 +31,7 @@ $routes->post('types', 'TypesController::create');
 /* CATEGORIES */
 $routes->get('categories', 'CategoriesController::index');
 $routes->post('categories', 'CategoriesController::create');
-$routes->put('categories/(:num)', 'CategoriesController::update/$1');
+$routes->post('categories/update/(:num)', 'CategoriesController::update/$1');
 $routes->put('categories/deactivate/(:num)', 'CategoriesController::deactivateCategory/$1');
 $routes->delete('categories/(:num)', 'CategoriesController::delete/$1');
 
