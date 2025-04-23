@@ -1,0 +1,28 @@
+CRITICAL - 2025-04-09 02:10:45 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: POST, Route: users/deactivate/1]
+in SYSTEMPATH\BaseModel.php on line 1830.
+ 1 SYSTEMPATH\BaseModel.php(1830): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(996): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(863): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Controllers\UsersController.php(89): CodeIgniter\Model->update('1', null)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsersController->deactivateUser('1')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\storeapp\\public\\index.php')
+CRITICAL - 2025-04-09 02:10:54 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: POST, Route: users/deactivate/1]
+in SYSTEMPATH\BaseModel.php on line 1830.
+ 1 SYSTEMPATH\BaseModel.php(1830): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(996): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(863): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Controllers\UsersController.php(89): CodeIgniter\Model->update('1', null)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsersController->deactivateUser('1')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\storeapp\\public\\index.php')
