@@ -34,6 +34,7 @@ $routes->post('categories', 'CategoriesController::create');
 $routes->post('categories/update/(:num)', 'CategoriesController::update/$1');
 $routes->put('categories/deactivate/(:num)', 'CategoriesController::deactivateCategory/$1');
 $routes->delete('categories/(:num)', 'CategoriesController::delete/$1');
+$routes->get('categories/active', 'CategoriesController::getCategories');
 
 /* PRODUCTS */
 $routes->get('products', 'ProductsController::index');

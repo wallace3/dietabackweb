@@ -23,6 +23,18 @@ class CategoriesController extends ResourceController
         return $this->failNotFound('No se encontraron categorias');
     }
 
+    public function getCategories(){
+        $db = \Config\Database::connect();
+
+        $builder = $db->table('categories c');
+        $builder->select('c.idCategory, c.name, c.image, c.url, COUNT(p.idProduct) AS total_productos');
+        $builder->join('products p', 'c.idCategory = p.idCategory', 'left');
+        $builder->groupBy('c.idCategory, c.name, c.image, c.url');
+        $result =  $builder->get()->getResultArray(); // o getResultArray()
+        return $this->respond($result);
+
+    }
+
     public function create(){
         $name = $this->request->getPost('name');
         $status = $this->request->getPost('status');
