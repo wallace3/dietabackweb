@@ -38,10 +38,11 @@ $routes->get('categories/active', 'CategoriesController::getCategories');
 
 /* PRODUCTS */
 $routes->get('products', 'ProductsController::index');
-$routes->get('product/(:num)', 'ProductsController::show');
+$routes->get('product/(:num)', 'ProductsController::show/$1');
 $routes->post('products', 'ProductsController::create');
 $routes->put('products/(:num)', 'ProductsController::update/$1');
 $routes->put('products/deactivate/(:num)', 'ProductsController::deactivateProduct/$1');
+$routes->get('products/categories','ProductsController::getProductsImage');
 
 /* IMAGES */
 $routes->get('images/(:num)', 'ImagesController::index/$1');
