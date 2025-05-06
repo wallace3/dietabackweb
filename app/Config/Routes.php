@@ -74,3 +74,15 @@ $routes->get('banners', 'BannersController::index');
 $routes->post('banners', 'BannersController::create');
 $routes->post('banners/upload', 'BannersController::upload');
 $routes->delete('banners/(:num)', 'BannersController::delete/$1');
+
+/* CART */
+$routes->get('cart', 'CartController::index');
+$routes->post('cart', 'CartController::create');
+$routes->get('cart/get/(:num)', 'CartController::getCart/$1');
+$routes->delete('cart/(:num)', 'CartController::delete/$1');
+
+/* WISHLIST */
+$routes->get('wishlist', 'WishListController::index');
+$routes->post('wishlist', 'WishListController::create');
+$routes->get('wishlist/get/:(num)', 'WishListController::getWishList/$1');
+$routes->delete('wishlist/(:num)', 'WishListController::delete/$1');
