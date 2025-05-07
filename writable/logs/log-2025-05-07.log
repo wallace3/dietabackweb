@@ -1,0 +1,102 @@
+ERROR - 2025-05-07 17:08:44 --> mysqli_sql_exception: Can't group on 'image_url' in C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `p`.`idP...', 0)
+#1 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`idP...')
+#2 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`idP...')
+#3 C:\xampp\htdocs\dietabackweb\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`idP...', Array, false)
+#4 C:\xampp\htdocs\dietabackweb\app\Controllers\WishListController.php(47): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(933): App\Controllers\WishListController->getWishList('1')
+#6 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WishListController))
+#7 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\dietabackweb\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\dietabackweb\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\dietabackweb\public\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\dietabackweb\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-05-07 17:08:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Can't group on 'image_url'
+[Method: GET, Route: wishlist/get/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`idProduct`, `p`.`description`, `p`.`price`, `c`.`idWishList`, MIN(i.url) AS image_url
+FROM `wishlist` `c`
+LEFT JOIN `products` `p` ON `c`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `users` `u` ON `c`.`idUser` = `u`.`idUser`
+LEFT JOIN `images` `i` ON `c`.`idProduct` = `i`.`idProduct`
+WHERE `c`.`idUser` = :c.idUser:
+GROUP BY `p`.`idProduct`, `p`.`description`, `p`.`price`, `c`.`idWishList`, `image_url`', [...], false)
+ 2 APPPATH\Controllers\WishListController.php(47): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\WishListController->getWishList('1')
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WishListController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-07 17:08:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Can't group on 'image_url'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`idProduct`, `p`.`description`, `p`.`price`, `c`.`idWishList`, MIN(i.url) AS image_url
+FROM `wishlist` `c`
+LEFT JOIN `products` `p` ON `c`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `users` `u` ON `c`.`idUser` = `u`.`idUser`
+LEFT JOIN `images` `i` ON `c`.`idProduct` = `i`.`idProduct`
+WHERE `c`.`idUser` = \'1\'
+GROUP BY `p`.`idProduct`, `p`.`description`, `p`.`price`, `c`.`idWishList`, `image_url`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`idProduct`, `p`.`description`, `p`.`price`, `c`.`idWishList`, MIN(i.url) AS image_url
+FROM `wishlist` `c`
+LEFT JOIN `products` `p` ON `c`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `users` `u` ON `c`.`idUser` = `u`.`idUser`
+LEFT JOIN `images` `i` ON `c`.`idProduct` = `i`.`idProduct`
+WHERE `c`.`idUser` = \'1\'
+GROUP BY `p`.`idProduct`, `p`.`description`, `p`.`price`, `c`.`idWishList`, `image_url`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`idProduct`, `p`.`description`, `p`.`price`, `c`.`idWishList`, MIN(i.url) AS image_url
+FROM `wishlist` `c`
+LEFT JOIN `products` `p` ON `c`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `users` `u` ON `c`.`idUser` = `u`.`idUser`
+LEFT JOIN `images` `i` ON `c`.`idProduct` = `i`.`idProduct`
+WHERE `c`.`idUser` = :c.idUser:
+GROUP BY `p`.`idProduct`, `p`.`description`, `p`.`price`, `c`.`idWishList`, `image_url`', [...], false)
+ 4 APPPATH\Controllers\WishListController.php(47): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\WishListController->getWishList('1')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WishListController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-07 17:08:44 --> [Caused by] mysqli_sql_exception: Can't group on 'image_url'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `p`.`idProduct`, `p`.`description`, `p`.`price`, `c`.`idWishList`, MIN(i.url) AS image_url
+FROM `wishlist` `c`
+LEFT JOIN `products` `p` ON `c`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `users` `u` ON `c`.`idUser` = `u`.`idUser`
+LEFT JOIN `images` `i` ON `c`.`idProduct` = `i`.`idProduct`
+WHERE `c`.`idUser` = \'1\'
+GROUP BY `p`.`idProduct`, `p`.`description`, `p`.`price`, `c`.`idWishList`, `image_url`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`idProduct`, `p`.`description`, `p`.`price`, `c`.`idWishList`, MIN(i.url) AS image_url
+FROM `wishlist` `c`
+LEFT JOIN `products` `p` ON `c`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `users` `u` ON `c`.`idUser` = `u`.`idUser`
+LEFT JOIN `images` `i` ON `c`.`idProduct` = `i`.`idProduct`
+WHERE `c`.`idUser` = \'1\'
+GROUP BY `p`.`idProduct`, `p`.`description`, `p`.`price`, `c`.`idWishList`, `image_url`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`idProduct`, `p`.`description`, `p`.`price`, `c`.`idWishList`, MIN(i.url) AS image_url
+FROM `wishlist` `c`
+LEFT JOIN `products` `p` ON `c`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `users` `u` ON `c`.`idUser` = `u`.`idUser`
+LEFT JOIN `images` `i` ON `c`.`idProduct` = `i`.`idProduct`
+WHERE `c`.`idUser` = \'1\'
+GROUP BY `p`.`idProduct`, `p`.`description`, `p`.`price`, `c`.`idWishList`, `image_url`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`idProduct`, `p`.`description`, `p`.`price`, `c`.`idWishList`, MIN(i.url) AS image_url
+FROM `wishlist` `c`
+LEFT JOIN `products` `p` ON `c`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `users` `u` ON `c`.`idUser` = `u`.`idUser`
+LEFT JOIN `images` `i` ON `c`.`idProduct` = `i`.`idProduct`
+WHERE `c`.`idUser` = :c.idUser:
+GROUP BY `p`.`idProduct`, `p`.`description`, `p`.`price`, `c`.`idWishList`, `image_url`', [...], false)
+ 5 APPPATH\Controllers\WishListController.php(47): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\WishListController->getWishList('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\WishListController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')

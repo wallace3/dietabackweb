@@ -16,11 +16,15 @@ class CartController extends ResourceController{
 
     public function index()
     {
-        $data = $this->cartModel->findAll();
-        if($data){
-            return $this->respond($data);
-        }
-        return $this->failNotFound('No se encontró ningún carrito');
+        $db = \Config\Database::connect();
+        $builder = $db->table('cart c');
+        $builder->select('p.idProduct,  c.created_at, c.updated_at, u.name AS userName, u.lastName, u.email, p.description, p.price, p.name, c.idCart, MIN(i.url) AS image_url');
+        $builder->join('products p', 'c.idProduct = p.idProduct', 'left');
+        $builder->join('users u', 'c.idUser = u.idUser', 'left');
+        $builder->join('images i', 'c.idProduct = i.idProduct', 'left');
+        $builder->groupBy('p.idProduct, p.description, p.price, p.name, c.idCart, u.lastName, u.email, c.created_at, c.updated_at');
+        $result =  $builder->get()->getResultArray(); // o getResultArray()
+        return $this->respond($result);
     }
 
     public function create()
@@ -38,12 +42,12 @@ class CartController extends ResourceController{
     {
         $db = \Config\Database::connect();
         $builder = $db->table('cart c');
-        $builder->select('p.idProduct, p.description, p.price , c.idCart, MIN(i.url) AS image_url');
+        $builder->select('p.idProduct, p.description, p.price, p.name, c.idCart, MIN(i.url) AS image_url');
         $builder->join('products p', 'c.idProduct = p.idProduct', 'left');
         $builder->join('users u', 'c.idUser = u.idUser', 'left');
         $builder->join('images i', 'c.idProduct = i.idProduct', 'left');
         $builder->where('c.idUser', $id);
-        $builder->groupBy('p.idProduct, p.description, p.price , c.idCart');
+        $builder->groupBy('p.idProduct, p.description, p.price, p.name, c.idCart');
         $result =  $builder->get()->getResultArray(); // o getResultArray()
         return $this->respond($result);
     }
