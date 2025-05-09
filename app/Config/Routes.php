@@ -54,6 +54,7 @@ $routes->delete('images/(:num)', 'ImagesController::delete/$1');
 $routes->get('auction', 'AuctionController::index');
 $routes->get('auction/active', 'AuctionController::getActives');
 $routes->post('auction', 'AuctionController::create');
+$routes->post('auction/create', 'AuctionController::createAuction');
 $routes->put('auction/(:num)', 'AuctionController::endAuction/$1');
 $routes->delete('auction/(:num)', 'AuctionController::delete/$1');
 

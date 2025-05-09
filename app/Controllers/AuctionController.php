@@ -63,4 +63,43 @@ class AuctionController extends ResourceController
         }
         return $this->failNotFound('Producto no encontrad0');
     }
+
+    public function createAuction()
+    {
+        $name = $this->request->getPost('name');
+        $status = $this->request->getPost('status');
+        $description = $this->request->getPost('description');
+        $user = $this->request->getPost('idUser');
+        $startDate = $this->request->getPost('startDate');
+        $endDate = $this->request->getPost('endDate');
+        $file = $this->request->getFile('image_url');
+
+       
+        $uploadPath = FCPATH . 'uploads/images/auctions/';
+        if (!is_dir($uploadPath)) {
+            mkdir($uploadPath, 0777, true);
+        }
+
+        if ($file && $file->isValid() && !$file->hasMoved()) {
+            $fileName = $file->getRandomName();
+            $file->move($uploadPath, $fileName);
+        }
+
+        $this->auctionModel->insert([
+            'name' => $name,
+            'description' => $description,
+            'image_url'=> 'uploads/images/auctions/' . $fileName,
+            'startTime' => $startDate,
+            'endTime' => $endDate,
+            'user' => $user,
+            'status' => $status
+        ]);
+
+        return $this->respond([
+            'message' => 'Subasta creada con éxito',
+            'files' => $fileName,
+            'status' => 200
+
+        ], 200);
+    }
 }
