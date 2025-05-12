@@ -1,0 +1,791 @@
+ERROR - 2025-05-12 19:17:46 --> mysqli_sql_exception: Unknown column 'idProduct' in 'field list' in C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `au...', 0)
+#1 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `au...')
+#2 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `au...')
+#3 C:\xampp\htdocs\dietabackweb\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `au...', Array, false)
+#4 C:\xampp\htdocs\dietabackweb\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\dietabackweb\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\dietabackweb\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\dietabackweb\app\Controllers\AuctionController.php(35): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(933): App\Controllers\AuctionController->create()
+#9 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+#10 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\dietabackweb\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\dietabackweb\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\dietabackweb\public\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\dietabackweb\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-05-12 19:17:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'idProduct' in 'field list'
+[Method: POST, Route: auction/details]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `auction` (`idProduct`, `idUser`, `status`, `created_at`, `updated_at`) VALUES (:idProduct:, :idUser:, :status:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\AuctionController.php(35): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 19:17:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'idProduct' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `auction` (`idProduct`, `idUser`, `status`, `created_at`, `updated_at`) VALUES (\'1\', 1, 1, \'2025-05-12 19:17:46\', \'2025-05-12 19:17:46\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `auction` (`idProduct`, `idUser`, `status`, `created_at`, `updated_at`) VALUES (\'1\', 1, 1, \'2025-05-12 19:17:46\', \'2025-05-12 19:17:46\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `auction` (`idProduct`, `idUser`, `status`, `created_at`, `updated_at`) VALUES (:idProduct:, :idUser:, :status:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\AuctionController.php(35): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->create()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 19:17:46 --> [Caused by] mysqli_sql_exception: Unknown column 'idProduct' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `auction` (`idProduct`, `idUser`, `status`, `created_at`, `updated_at`) VALUES (\'1\', 1, 1, \'2025-05-12 19:17:46\', \'2025-05-12 19:17:46\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `auction` (`idProduct`, `idUser`, `status`, `created_at`, `updated_at`) VALUES (\'1\', 1, 1, \'2025-05-12 19:17:46\', \'2025-05-12 19:17:46\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `auction` (`idProduct`, `idUser`, `status`, `created_at`, `updated_at`) VALUES (\'1\', 1, 1, \'2025-05-12 19:17:46\', \'2025-05-12 19:17:46\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `auction` (`idProduct`, `idUser`, `status`, `created_at`, `updated_at`) VALUES (:idProduct:, :idUser:, :status:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\AuctionController.php(35): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->create()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 19:24:37 --> ErrorException: Attempt to read property "idAuction" on array
+[Method: POST, Route: auction/details]
+in APPPATH\Controllers\AuctionDetailsController.php on line 34.
+ 1 APPPATH\Controllers\AuctionDetailsController.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "idAuction" on array', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\AuctionDetailsController.php', 34)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 19:26:01 --> ErrorException: Attempt to read property "idAuction" on array
+[Method: POST, Route: auction/details]
+in APPPATH\Controllers\AuctionDetailsController.php on line 34.
+ 1 APPPATH\Controllers\AuctionDetailsController.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "idAuction" on array', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\AuctionDetailsController.php', 34)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 19:26:32 --> ErrorException: Attempt to read property "idAuction" on array
+[Method: POST, Route: auction/details]
+in APPPATH\Controllers\AuctionDetailsController.php on line 34.
+ 1 APPPATH\Controllers\AuctionDetailsController.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "idAuction" on array', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\AuctionDetailsController.php', 34)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 19:26:46 --> ErrorException: Attempt to read property "idAuction" on array
+[Method: POST, Route: auction/details]
+in APPPATH\Controllers\AuctionDetailsController.php on line 35.
+ 1 APPPATH\Controllers\AuctionDetailsController.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "idAuction" on array', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\AuctionDetailsController.php', 35)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 19:28:07 --> ErrorException: Attempt to read property "idAuction" on array
+[Method: POST, Route: auction/details]
+in APPPATH\Controllers\AuctionDetailsController.php on line 36.
+ 1 APPPATH\Controllers\AuctionDetailsController.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "idAuction" on array', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\AuctionDetailsController.php', 36)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 20:25:57 --> ErrorException: Undefined variable $db
+[Method: GET, Route: auction/details/products/6]
+in APPPATH\Controllers\AuctionDetailsController.php on line 51.
+ 1 APPPATH\Controllers\AuctionDetailsController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $db', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\AuctionDetailsController.php', 51)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('6')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 20:28:05 --> ErrorException: Undefined variable $db
+[Method: GET, Route: auction/details/products/5]
+in APPPATH\Controllers\AuctionDetailsController.php on line 51.
+ 1 APPPATH\Controllers\AuctionDetailsController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $db', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\AuctionDetailsController.php', 51)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 20:28:20 --> ErrorException: Undefined variable $db
+[Method: GET, Route: auction/details/products/5]
+in APPPATH\Controllers\AuctionDetailsController.php on line 51.
+ 1 APPPATH\Controllers\AuctionDetailsController.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $db', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\AuctionDetailsController.php', 51)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+ERROR - 2025-05-12 20:28:39 --> mysqli_sql_exception: Table 'auction_bids.product' doesn't exist in C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `ad`.`id...', 0)
+#1 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ad`.`id...')
+#2 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ad`.`id...')
+#3 C:\xampp\htdocs\dietabackweb\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`id...', Array, false)
+#4 C:\xampp\htdocs\dietabackweb\app\Controllers\AuctionDetailsController.php(58): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+#6 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+#7 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\dietabackweb\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\dietabackweb\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\dietabackweb\public\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\dietabackweb\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-05-12 20:28:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'auction_bids.product' doesn't exist
+[Method: GET, Route: auction/details/products/5]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = :ad.idAuction:
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', [...], false)
+ 2 APPPATH\Controllers\AuctionDetailsController.php(58): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 20:28:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'auction_bids.product' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = :ad.idAuction:
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', [...], false)
+ 4 APPPATH\Controllers\AuctionDetailsController.php(58): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 20:28:39 --> [Caused by] mysqli_sql_exception: Table 'auction_bids.product' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = :ad.idAuction:
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', [...], false)
+ 5 APPPATH\Controllers\AuctionDetailsController.php(58): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+ERROR - 2025-05-12 20:28:42 --> mysqli_sql_exception: Table 'auction_bids.product' doesn't exist in C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `ad`.`id...', 0)
+#1 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ad`.`id...')
+#2 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ad`.`id...')
+#3 C:\xampp\htdocs\dietabackweb\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`id...', Array, false)
+#4 C:\xampp\htdocs\dietabackweb\app\Controllers\AuctionDetailsController.php(58): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+#6 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+#7 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\dietabackweb\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\dietabackweb\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\dietabackweb\public\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\dietabackweb\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-05-12 20:28:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'auction_bids.product' doesn't exist
+[Method: GET, Route: auction/details/products/5]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = :ad.idAuction:
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', [...], false)
+ 2 APPPATH\Controllers\AuctionDetailsController.php(58): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 20:28:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'auction_bids.product' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = :ad.idAuction:
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', [...], false)
+ 4 APPPATH\Controllers\AuctionDetailsController.php(58): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 20:28:42 --> [Caused by] mysqli_sql_exception: Table 'auction_bids.product' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = :ad.idAuction:
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', [...], false)
+ 5 APPPATH\Controllers\AuctionDetailsController.php(58): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+ERROR - 2025-05-12 20:30:20 --> mysqli_sql_exception: Table 'auction_bids.product' doesn't exist in C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `ad`.`id...', 0)
+#1 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ad`.`id...')
+#2 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ad`.`id...')
+#3 C:\xampp\htdocs\dietabackweb\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`id...', Array, false)
+#4 C:\xampp\htdocs\dietabackweb\app\Controllers\AuctionDetailsController.php(59): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+#6 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+#7 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\dietabackweb\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\dietabackweb\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\dietabackweb\public\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\dietabackweb\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-05-12 20:30:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'auction_bids.product' doesn't exist
+[Method: GET, Route: auction/details/products/5]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = :ad.idAuction:
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', [...], false)
+ 2 APPPATH\Controllers\AuctionDetailsController.php(59): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 20:30:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'auction_bids.product' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = :ad.idAuction:
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', [...], false)
+ 4 APPPATH\Controllers\AuctionDetailsController.php(59): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 20:30:20 --> [Caused by] mysqli_sql_exception: Table 'auction_bids.product' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = :ad.idAuction:
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', [...], false)
+ 5 APPPATH\Controllers\AuctionDetailsController.php(59): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+ERROR - 2025-05-12 20:31:04 --> mysqli_sql_exception: Table 'auction_bids.product' doesn't exist in C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `ad`.`id...', 0)
+#1 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ad`.`id...')
+#2 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ad`.`id...')
+#3 C:\xampp\htdocs\dietabackweb\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`id...', Array, false)
+#4 C:\xampp\htdocs\dietabackweb\app\Controllers\AuctionDetailsController.php(60): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+#6 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+#7 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\dietabackweb\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\dietabackweb\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\dietabackweb\public\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\dietabackweb\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-05-12 20:31:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'auction_bids.product' doesn't exist
+[Method: GET, Route: auction/details/products/5]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = :ad.idAuction:
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', [...], false)
+ 2 APPPATH\Controllers\AuctionDetailsController.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 20:31:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'auction_bids.product' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = :ad.idAuction:
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', [...], false)
+ 4 APPPATH\Controllers\AuctionDetailsController.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 20:31:04 --> [Caused by] mysqli_sql_exception: Table 'auction_bids.product' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `product` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = :ad.idAuction:
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', [...], false)
+ 5 APPPATH\Controllers\AuctionDetailsController.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+ERROR - 2025-05-12 20:31:38 --> mysqli_sql_exception: Unknown column 'ad.idAuctionDetail' in 'field list' in C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `ad`.`id...', 0)
+#1 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ad`.`id...')
+#2 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ad`.`id...')
+#3 C:\xampp\htdocs\dietabackweb\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`id...', Array, false)
+#4 C:\xampp\htdocs\dietabackweb\app\Controllers\AuctionDetailsController.php(60): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+#6 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+#7 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\dietabackweb\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\dietabackweb\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\dietabackweb\public\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\dietabackweb\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-05-12 20:31:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ad.idAuctionDetail' in 'field list'
+[Method: GET, Route: auction/details/products/5]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `products` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = :ad.idAuction:
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', [...], false)
+ 2 APPPATH\Controllers\AuctionDetailsController.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 20:31:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ad.idAuctionDetail' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `products` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `products` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `products` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = :ad.idAuction:
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', [...], false)
+ 4 APPPATH\Controllers\AuctionDetailsController.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 20:31:38 --> [Caused by] mysqli_sql_exception: Unknown column 'ad.idAuctionDetail' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `products` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `products` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `products` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `products` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = :ad.idAuction:
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', [...], false)
+ 5 APPPATH\Controllers\AuctionDetailsController.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+ERROR - 2025-05-12 20:33:20 --> mysqli_sql_exception: Unknown column 'ad.idAuctionDetail' in 'field list' in C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `ad`.`id...', 0)
+#1 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ad`.`id...')
+#2 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ad`.`id...')
+#3 C:\xampp\htdocs\dietabackweb\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`id...', Array, false)
+#4 C:\xampp\htdocs\dietabackweb\app\Controllers\AuctionDetailsController.php(60): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+#6 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+#7 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\dietabackweb\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\dietabackweb\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\dietabackweb\public\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\dietabackweb\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-05-12 20:33:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ad.idAuctionDetail' in 'field list'
+[Method: GET, Route: auction/details/products/5]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `products` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = :ad.idAuction:
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', [...], false)
+ 2 APPPATH\Controllers\AuctionDetailsController.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 20:33:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ad.idAuctionDetail' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `products` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `products` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `products` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = :ad.idAuction:
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', [...], false)
+ 4 APPPATH\Controllers\AuctionDetailsController.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 20:33:20 --> [Caused by] mysqli_sql_exception: Unknown column 'ad.idAuctionDetail' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `products` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `products` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `products` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = \'5\'
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`, MIN(i.url) AS image_url
+FROM `auction_details`
+LEFT JOIN `products` `p` ON `ad`.`idProduct` = `p`.`idProduct`
+LEFT JOIN `images` `i` ON `ad`.`idProduct` = `i`.`idProduct`
+WHERE `ad`.`idAuction` = :ad.idAuction:
+GROUP BY `ad`.`idAuctionDetail`, `ad`.`idAuction`, `p`.`name`, `p`.`description`', [...], false)
+ 5 APPPATH\Controllers\AuctionDetailsController.php(60): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 20:33:37 --> Error: Call to undefined function App\Controllers\get()
+[Method: GET, Route: auction/details/products/5]
+in APPPATH\Controllers\AuctionDetailsController.php on line 59.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 20:33:55 --> Error: Call to undefined function App\Controllers\get()
+[Method: GET, Route: auction/details/products/5]
+in APPPATH\Controllers\AuctionDetailsController.php on line 59.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 20:34:25 --> Error: Call to undefined function App\Controllers\get()
+[Method: GET, Route: auction/details/products/5]
+in APPPATH\Controllers\AuctionDetailsController.php on line 59.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 21:38:44 --> Error: Call to undefined function App\Controllers\get()
+[Method: GET, Route: auction/details/products/5]
+in APPPATH\Controllers\AuctionDetailsController.php on line 59.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 21:40:41 --> ParseError: syntax error, unexpected token "return"
+[Method: GET, Route: auction/details/products/5]
+in APPPATH\Controllers\AuctionDetailsController.php on line 60.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\AuctionDetailsController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\AuctionDetailsController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\AuctionDetailsController')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\AuctionDetailsController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 21:40:47 --> Error: Call to undefined function App\Controllers\get()
+[Method: GET, Route: auction/details/products/5]
+in APPPATH\Controllers\AuctionDetailsController.php on line 59.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-12 21:40:56 --> Error: Call to undefined function App\Controllers\get()
+[Method: GET, Route: auction/details/products/5]
+in APPPATH\Controllers\AuctionDetailsController.php on line 58.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionDetailsController->getAuctionProducts('5')
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionDetailsController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')

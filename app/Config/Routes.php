@@ -58,6 +58,13 @@ $routes->post('auction/create', 'AuctionController::createAuction');
 $routes->put('auction/(:num)', 'AuctionController::endAuction/$1');
 $routes->delete('auction/(:num)', 'AuctionController::delete/$1');
 
+/* AUCTION DETAILS */
+$routes->get('auction/details', 'AuctionDetailsController::index');
+$routes->post('auction/details', 'AuctionDetailsController::create');
+$routes->get('auction/details/products/(:num)', 'AuctionDetailsController::getAuctionProducts/$1');
+$routes->delete('auction/details/delete/(:num)', 'AuctionDetailsController::delete/$1');
+
+
 /* BIDS */
 $routes->get('bids', 'BidsController::index');
 $routes->get('bids/product/(:num)', 'BidsController::productBids/$1');
