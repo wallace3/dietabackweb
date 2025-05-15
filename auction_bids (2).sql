@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-05-2025 a las 23:54:59
+-- Tiempo de generación: 16-05-2025 a las 00:18:41
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -75,8 +75,8 @@ CREATE TABLE `auction` (
 --
 
 INSERT INTO `auction` (`idAuction`, `name`, `description`, `image_url`, `startTime`, `endTime`, `idUser`, `status`, `created_at`, `updated_at`) VALUES
-(5, 'Subasta de Joyería', 'Subasta de joyería', 'uploads/images/auctions/1746812441_107cc3cfa6156c15264a.jpg', '2025-05-09 00:36:00', '2025-05-16 13:37:00', 0, 1, '2025-05-09 17:40:41', '2025-05-09 17:40:41'),
-(6, 'Subasta de Libros', 'Subasta de Libros', 'uploads/images/auctions/1746813498_57c9e5ab0d71c9ecab82.jpg', '2025-05-16 11:58:00', '2025-05-13 11:58:00', 0, 1, '2025-05-09 17:58:18', '2025-05-09 17:58:18');
+(6, 'Subasta de Libros', 'Subasta de Libros', 'uploads/images/auctions/1747244123_0bd7fcec23b05600fe5f.jpg', '2025-05-16 11:58:00', '2025-05-13 11:58:00', 1, 1, '2025-05-09 17:58:18', '2025-05-14 17:35:23'),
+(7, 'Subasta de Joyería', 'Subasta de joyería', 'uploads/images/auctions/1747239870_992ec67332505ed153fb.jpg', '2025-05-09 00:36:00', '2025-05-16 13:37:00', 0, 1, '2025-05-14 16:24:30', '2025-05-14 16:24:30');
 
 -- --------------------------------------------------------
 
@@ -86,12 +86,25 @@ INSERT INTO `auction` (`idAuction`, `name`, `description`, `image_url`, `startTi
 
 CREATE TABLE `auction_details` (
   `idAuctionDetail` int(11) NOT NULL,
+  `idAuction` int(11) NOT NULL,
   `idProduct` int(11) NOT NULL,
   `idUser` int(11) NOT NULL,
   `status` int(11) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `auction_details`
+--
+
+INSERT INTO `auction_details` (`idAuctionDetail`, `idAuction`, `idProduct`, `idUser`, `status`, `created_at`, `updated_at`) VALUES
+(7, 5, 1, 1, 1, '2025-05-12 19:43:57', '2025-05-12 19:43:57'),
+(8, 5, 2, 1, 1, '2025-05-12 19:46:48', '2025-05-12 19:46:48'),
+(9, 6, 2, 1, 1, '2025-05-12 22:00:35', '2025-05-12 22:00:35'),
+(10, 6, 3, 1, 1, '2025-05-12 22:05:17', '2025-05-12 22:05:17'),
+(11, 7, 2, 1, 1, '2025-05-14 19:21:03', '2025-05-14 19:21:03'),
+(12, 7, 4, 1, 1, '2025-05-14 19:21:08', '2025-05-14 19:21:08');
 
 -- --------------------------------------------------------
 
@@ -124,6 +137,7 @@ INSERT INTO `banners` (`idBanner`, `name`, `url`, `status`, `created_at`, `updat
 
 CREATE TABLE `bids` (
   `idBid` int(10) NOT NULL,
+  `idAuction` int(11) NOT NULL,
   `idProduct` int(10) NOT NULL,
   `idUser` int(10) NOT NULL,
   `amount` varchar(50) NOT NULL,
@@ -136,9 +150,8 @@ CREATE TABLE `bids` (
 -- Volcado de datos para la tabla `bids`
 --
 
-INSERT INTO `bids` (`idBid`, `idProduct`, `idUser`, `amount`, `status`, `created_at`, `updated_at`) VALUES
-(2, 1, 1, '200', 1, '2025-03-25 19:33:03', '2025-03-25 19:33:03'),
-(3, 1, 1, '300', 1, '2025-03-25 19:36:14', '2025-03-25 19:36:14');
+INSERT INTO `bids` (`idBid`, `idAuction`, `idProduct`, `idUser`, `amount`, `status`, `created_at`, `updated_at`) VALUES
+(2, 7, 4, 1, '2000', 1, '2025-03-25 19:33:03', '2025-03-25 19:33:03');
 
 -- --------------------------------------------------------
 
@@ -546,13 +559,13 @@ ALTER TABLE `address`
 -- AUTO_INCREMENT de la tabla `auction`
 --
 ALTER TABLE `auction`
-  MODIFY `idAuction` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idAuction` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `auction_details`
 --
 ALTER TABLE `auction_details`
-  MODIFY `idAuctionDetail` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idAuctionDetail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `banners`
@@ -564,7 +577,7 @@ ALTER TABLE `banners`
 -- AUTO_INCREMENT de la tabla `bids`
 --
 ALTER TABLE `bids`
-  MODIFY `idBid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idBid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `cart`
