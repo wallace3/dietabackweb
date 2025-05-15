@@ -91,12 +91,58 @@ class AuctionController extends ResourceController
             'image_url'=> 'uploads/images/auctions/' . $fileName,
             'startTime' => $startDate,
             'endTime' => $endDate,
-            'user' => $user,
+            'idUser' => $user,
             'status' => $status
         ]);
 
         return $this->respond([
             'message' => 'Subasta creada con éxito',
+            'files' => $fileName,
+            'status' => 200
+
+        ], 200);
+    }
+
+    public function updateAuction($id = null)
+    {
+        $auction = $this->request->getPost('auction');
+        $description =  $this->request->getPost('description');
+        $endDate =  $this->request->getPost('endDate');
+        $startDate = $this->request->getPost('startDate');
+        $file = $this->request->getFile('image_url');
+
+        $uploadPath = FCPATH . 'uploads/images/auctions/';
+        if (!is_dir($uploadPath)) {
+            mkdir($uploadPath, 0777, true);
+        }
+
+        if ($file && $file->isValid() && !$file->hasMoved()) {
+            $fileName = $file->getRandomName();
+            $file->move($uploadPath, $fileName);
+        }
+
+        $this->auctionModel->update($id,[
+            'name' => $auction,
+            'description' => $description,
+            'image_url'=> 'uploads/images/auctions/' .$fileName,
+            'startTime' => $startDate,
+            'endTime' => $endDate,
+            'idUser' => 1,
+            'status' => 1
+        ]);
+
+        var_dump($this->auctionModel->update($id,[
+            'name' => $auction,
+            'description' => $description,
+            'image_url'=> 'uploads/images/categories/' .$fileName,
+            'startTime' => $startDate,
+            'endTime' => $endDate,
+            'idUser' => 1,
+            'status' => 1
+        ]));
+
+        return $this->respond([
+            'message' => 'Subasta actualizada correctamente',
             'files' => $fileName,
             'status' => 200
 
