@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-05-2025 a las 00:18:41
+-- Tiempo de generación: 16-05-2025 a las 23:58:57
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -206,7 +206,8 @@ INSERT INTO `categories` (`idCategory`, `name`, `image`, `url`, `status`, `creat
 (30, 'Deportes', '1746816687_94f227fd0994e6025538.jpg', 'uploads/images/categories/1746816687_94f227fd0994e6025538.jpg', 1, '2025-05-09 18:51:27', '2025-05-09 18:51:27'),
 (32, 'Oportunidades', '1746816980_2e84d2d7eb7064b17dd2.jpg', 'uploads/images/categories/1746816980_2e84d2d7eb7064b17dd2.jpg', 1, '2025-05-09 18:56:20', '2025-05-09 18:56:20'),
 (33, 'Videojuegos', '1746817398_67facad83d53d7482edf.jpg', 'uploads/images/categories/1746817398_67facad83d53d7482edf.jpg', 1, '2025-05-09 19:03:18', '2025-05-09 19:03:18'),
-(34, 'Revistas & Comic\'s', '1746818205_a47cc9509e8e86b5c88a.jpg', 'uploads/images/categories/1746818205_a47cc9509e8e86b5c88a.jpg', 1, '2025-05-09 19:16:45', '2025-05-09 19:16:45');
+(34, 'Revistas & Comic\'s', '1746818205_a47cc9509e8e86b5c88a.jpg', 'uploads/images/categories/1746818205_a47cc9509e8e86b5c88a.jpg', 1, '2025-05-09 19:16:45', '2025-05-09 19:16:45'),
+(35, 'Coleccionables', '1747416209_99076a9c0d5845a4ae75.png', 'uploads/images/categories/1747416209_99076a9c0d5845a4ae75.png', 1, '2025-05-16 17:00:37', '2025-05-16 17:23:29');
 
 -- --------------------------------------------------------
 
@@ -261,7 +262,14 @@ INSERT INTO `images` (`idImage`, `idProduct`, `name`, `url`, `status`, `created_
 (12, 4, '1745950777_af49b53fdb6d118e67d4.png', 'uploads/images/1745950777_af49b53fdb6d118e67d4.png', 1, '2025-04-29 18:19:37', '2025-04-29 18:19:37'),
 (13, 3, '1745951387_8eceaab2cb645201840f.jpg', 'uploads/images/1745951387_8eceaab2cb645201840f.jpg', 1, '2025-04-29 18:29:47', '2025-04-29 18:29:47'),
 (14, 1, '1745956453_15d6dfb1baa817338183.png', 'uploads/images/1745956453_15d6dfb1baa817338183.png', 1, '2025-04-29 19:54:13', '2025-04-29 19:54:13'),
-(15, 1, '1745956453_13bc4cea9abad56b6976.jpg', 'uploads/images/1745956453_13bc4cea9abad56b6976.jpg', 1, '2025-04-29 19:54:13', '2025-04-29 19:54:13');
+(15, 1, '1745956453_13bc4cea9abad56b6976.jpg', 'uploads/images/1745956453_13bc4cea9abad56b6976.jpg', 1, '2025-04-29 19:54:13', '2025-04-29 19:54:13'),
+(16, 5, '1747419597_a58ce3cec5119522d72b.jpg', 'uploads/images/1747419597_a58ce3cec5119522d72b.jpg', 1, '2025-05-16 18:19:57', '2025-05-16 18:19:57'),
+(17, 6, '1747419787_5d96d23dcf3d389114fd.jpg', 'uploads/images/1747419787_5d96d23dcf3d389114fd.jpg', 1, '2025-05-16 18:23:07', '2025-05-16 18:23:07'),
+(18, 9, '1747421023_2fb093b2d3ffc27454c4.jpg', 'uploads/images/1747421023_2fb093b2d3ffc27454c4.jpg', 1, '2025-05-16 18:43:43', '2025-05-16 18:43:43'),
+(19, 10, '1747421303_316a9d097ca568d9d792.jpg', 'uploads/images/1747421303_316a9d097ca568d9d792.jpg', 1, '2025-05-16 18:48:23', '2025-05-16 18:48:23'),
+(20, 11, '1747425875_2df150aa346de2dd9f98.png', 'uploads/images/1747425875_2df150aa346de2dd9f98.png', 1, '2025-05-16 20:04:35', '2025-05-16 20:04:35'),
+(21, 12, '1747426003_dd3269bc12a2c3be0a01.jpg', 'uploads/images/1747426003_dd3269bc12a2c3be0a01.jpg', 1, '2025-05-16 20:06:43', '2025-05-16 20:06:43'),
+(22, 13, '1747426177_2ac1e2cd14c1f3295ac5.jpg', 'uploads/images/1747426177_2ac1e2cd14c1f3295ac5.jpg', 1, '2025-05-16 20:09:37', '2025-05-16 20:09:37');
 
 -- --------------------------------------------------------
 
@@ -287,10 +295,19 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`idProduct`, `name`, `description`, `idCategory`, `idSubcategory`, `idUser`, `price`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Gorra Beisbol 2', 'Gorra de beisbol de babe ruth color amarillo', 10, 1, 1, '4000.00', 1, '2025-03-24 19:38:51', '2025-04-07 17:09:50'),
-(2, 'Cuadro Van Hogh', 'Cuadro Van Gogh, 19x20 cm, oleo sobre tela, firmado.', 7, 0, 1, '3000.00', 1, '2025-04-01 17:56:24', '2025-04-01 17:56:24'),
-(3, 'Reloj Casio', 'Reloj casio, clásico, usado, funcional con correa de oro', 10, 2, 1, '2000', 1, '2025-04-05 01:06:49', '2025-04-29 18:29:30'),
-(4, 'Playera de messi autografiada', 'Playera de messi, barcelona, campeonato uefa champions league 2004', 10, 0, 1, '1500', 1, '2025-04-05 01:19:23', '2025-04-05 01:19:23');
+(1, 'Gorra Beisbol 2', 'Gorra de beisbol de babe ruth color amarillo', 10, 1, 1, '4000.00', 0, '2025-03-24 19:38:51', '2025-05-16 20:19:36'),
+(2, 'Cuadro Van Hogh', 'Cuadro Van Gogh, 19x20 cm, oleo sobre tela, firmado.', 7, 0, 1, '3000.00', 0, '2025-04-01 17:56:24', '2025-05-16 20:20:59'),
+(3, 'Reloj Casio', 'Reloj casio, clásico, usado, funcional con correa de oro', 10, 2, 1, '2000', 0, '2025-04-05 01:06:49', '2025-05-16 20:21:17'),
+(4, 'Playera de messi autografiada', 'Playera de messi, barcelona, campeonato uefa champions league 2004', 10, 0, 1, '1500', 0, '2025-04-05 01:19:23', '2025-05-16 20:21:19'),
+(5, 'Cuadro da vinci', 'Cuadro de da vinci, obra amarilla, oleo sobre tela 45cm * 150cm', 23, 10, 1, '30000', 1, '2025-05-16 18:19:20', '2025-05-16 18:19:20'),
+(6, 'Reloj Rolex', 'Reloj Rolex en casa, corre de piel.', 24, 11, 1, '17000', 1, '2025-05-16 18:22:47', '2025-05-16 18:22:47'),
+(7, 'Champagne Moet', 'Champagne moet 3 piezas', 26, 20, 1, '12000', 1, '2025-05-16 18:28:10', '2025-05-16 18:28:10'),
+(8, 'Cuadro modreno, arte contemporaneo', 'Cuadro renancesista', 27, 10, 1, '75000', 1, '2025-05-16 18:31:17', '2025-05-16 18:31:17'),
+(9, 'Mesa victoriana', 'Mesa victoriana del siglo XIX', 29, 10, 1, '10000', 1, '2025-05-16 18:43:28', '2025-05-16 18:43:28'),
+(10, 'Reloj del siglo X!X', 'Reloj de italia, siglo XIX', 28, 10, 1, '2400', 1, '2025-05-16 18:48:11', '2025-05-16 18:48:11'),
+(11, 'Jersey Michael Jordan', 'Jersey firmado michael jordan temporada 2000', 30, 2, 1, '2300', 1, '2025-05-16 20:04:17', '2025-05-16 20:04:17'),
+(12, 'Control xbox VR', 'Control original XBOX', 33, 10, 1, '900', 1, '2025-05-16 20:06:29', '2025-05-16 20:06:29'),
+(13, 'Cafetera 2000', 'Cafetera usada ', 32, 10, 1, '500', 1, '2025-05-16 20:09:00', '2025-05-16 20:09:00');
 
 -- --------------------------------------------------------
 
@@ -343,26 +360,26 @@ CREATE TABLE `subcategories` (
 --
 
 INSERT INTO `subcategories` (`idSubcategory`, `idCategory`, `name`, `status`, `created_at`, `updated_at`) VALUES
-(1, 30, 'Futbol', 1, '2025-04-03 19:36:44', '2025-05-09 19:17:33'),
-(2, 30, 'Basquetbol', 1, '2025-04-07 16:20:40', '2025-05-09 19:17:39'),
-(3, 30, 'Tenis', 1, '2025-05-09 19:17:53', '2025-05-09 19:18:00'),
-(4, 30, 'Futbol Americano', 1, '2025-05-09 19:18:18', '2025-05-09 19:18:51'),
-(5, 30, 'Volleyball', 1, '2025-05-09 19:18:27', '2025-05-09 19:18:59'),
-(6, 30, 'Atletismo', 1, '2025-05-09 19:18:39', '2025-05-09 19:19:05'),
-(7, 30, 'Natación', 1, '2025-05-09 19:18:45', '2025-05-09 19:19:10'),
-(8, 33, 'Videojuegos', 1, '2025-05-09 19:19:26', '2025-05-09 19:19:46'),
-(9, 33, 'Consolas', 1, '2025-05-09 19:19:33', '2025-05-09 19:19:53'),
+(1, 30, 'Futbol', 1, '2025-04-03 19:36:44', '2025-05-16 18:31:30'),
+(2, 30, 'Basquetbol', 1, '2025-04-07 16:20:40', '2025-05-16 18:31:38'),
+(3, 30, 'Tenis', 1, '2025-05-09 19:17:53', '2025-05-16 18:32:03'),
+(4, 30, 'Futbol Americano', 1, '2025-05-09 19:18:18', '2025-05-16 18:32:09'),
+(5, 30, 'Volleyball', 1, '2025-05-09 19:18:27', '2025-05-16 18:32:16'),
+(6, 30, 'Atletismo', 1, '2025-05-09 19:18:39', '2025-05-16 18:32:23'),
+(7, 30, 'Natación', 1, '2025-05-09 19:18:45', '2025-05-16 18:32:29'),
+(8, 33, 'Videojuegos', 1, '2025-05-09 19:19:26', '2025-05-16 18:32:37'),
+(9, 33, 'Consolas', 1, '2025-05-09 19:19:33', '2025-05-16 18:32:42'),
 (10, 33, 'Accesorios', 1, '2025-05-09 19:19:38', '2025-05-09 19:19:58'),
-(11, 24, 'Relojes', 1, '2025-05-09 19:23:57', '2025-05-09 19:23:57'),
-(12, 24, 'Anillos', 1, '2025-05-09 19:24:08', '2025-05-09 19:24:08'),
-(13, 24, 'Collares', 1, '2025-05-09 19:24:14', '2025-05-09 19:24:14'),
-(14, 24, 'Pulseras', 1, '2025-05-09 19:24:23', '2025-05-09 19:24:23'),
-(15, 24, 'Perlas', 1, '2025-05-09 19:24:48', '2025-05-09 19:24:48'),
-(16, 26, 'Vinos', 1, '2025-05-09 19:25:51', '2025-05-09 19:25:51'),
-(17, 26, 'Tequilas', 1, '2025-05-09 19:26:00', '2025-05-09 19:26:00'),
-(18, 26, 'Whiskey', 1, '2025-05-09 19:26:05', '2025-05-09 19:26:05'),
-(19, 26, 'Brandy', 1, '2025-05-09 19:26:12', '2025-05-09 19:26:12'),
-(20, 26, 'Champagnes', 1, '2025-05-09 19:26:19', '2025-05-09 19:26:19'),
+(11, 24, 'Relojes', 1, '2025-05-09 19:23:57', '2025-05-16 18:32:48'),
+(12, 24, 'Anillos', 1, '2025-05-09 19:24:08', '2025-05-16 18:32:55'),
+(13, 24, 'Collares', 1, '2025-05-09 19:24:14', '2025-05-16 18:33:00'),
+(14, 24, 'Pulseras', 1, '2025-05-09 19:24:23', '2025-05-16 18:33:06'),
+(15, 24, 'Perlas', 1, '2025-05-09 19:24:48', '2025-05-16 18:33:12'),
+(16, 26, 'Vinos', 1, '2025-05-09 19:25:51', '2025-05-16 18:33:18'),
+(17, 26, 'Tequilas', 1, '2025-05-09 19:26:00', '2025-05-16 18:33:24'),
+(18, 26, 'Whiskey', 1, '2025-05-09 19:26:05', '2025-05-16 18:33:28'),
+(19, 26, 'Brandy', 1, '2025-05-09 19:26:12', '2025-05-16 18:33:34'),
+(20, 26, 'Champagnes', 1, '2025-05-09 19:26:19', '2025-05-16 18:33:41'),
 (21, 34, 'Revista de Comics', 1, '2025-05-09 19:28:23', '2025-05-09 19:28:23'),
 (22, 34, 'Historietas', 1, '2025-05-09 19:28:33', '2025-05-09 19:28:33'),
 (23, 34, 'Cocina', 1, '2025-05-09 19:28:38', '2025-05-09 19:28:38');
@@ -589,7 +606,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `idCategory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `idCategory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de la tabla `contracts`
@@ -607,13 +624,13 @@ ALTER TABLE `contract_details`
 -- AUTO_INCREMENT de la tabla `images`
 --
 ALTER TABLE `images`
-  MODIFY `idImage` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idImage` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `idProduct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idProduct` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `sales`
