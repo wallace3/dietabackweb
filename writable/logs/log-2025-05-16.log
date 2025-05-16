@@ -184,3 +184,89 @@ GROUP BY `p`.`idProduct`, `p`.`name`, `p`.`price`', [...], false)
 10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 11 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+ERROR - 2025-05-16 22:09:17 --> mysqli_sql_exception: Column 'status' in where clause is ambiguous in C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `p`.`idP...', 0)
+#1 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`idP...')
+#2 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`idP...')
+#3 C:\xampp\htdocs\dietabackweb\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`idP...', Array, false)
+#4 C:\xampp\htdocs\dietabackweb\app\Controllers\ProductsController.php(72): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(933): App\Controllers\ProductsController->getProductsImage()
+#6 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductsController))
+#7 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\dietabackweb\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\dietabackweb\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\dietabackweb\public\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\dietabackweb\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-05-16 22:09:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'status' in where clause is ambiguous
+[Method: GET, Route: products/categories]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`idProduct`, `p`.`name`, `p`.`price`, MIN(i.url) AS image_url
+FROM `products` `p`
+LEFT JOIN `images` `i` ON `p`.`idProduct` = `i`.`idProduct`
+WHERE `status` = :status:
+GROUP BY `p`.`idProduct`, `p`.`name`, `p`.`price`', [...], false)
+ 2 APPPATH\Controllers\ProductsController.php(72): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductsController->getProductsImage()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductsController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-16 22:09:17 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'status' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`idProduct`, `p`.`name`, `p`.`price`, MIN(i.url) AS image_url
+FROM `products` `p`
+LEFT JOIN `images` `i` ON `p`.`idProduct` = `i`.`idProduct`
+WHERE `status` = 1
+GROUP BY `p`.`idProduct`, `p`.`name`, `p`.`price`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`idProduct`, `p`.`name`, `p`.`price`, MIN(i.url) AS image_url
+FROM `products` `p`
+LEFT JOIN `images` `i` ON `p`.`idProduct` = `i`.`idProduct`
+WHERE `status` = 1
+GROUP BY `p`.`idProduct`, `p`.`name`, `p`.`price`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`idProduct`, `p`.`name`, `p`.`price`, MIN(i.url) AS image_url
+FROM `products` `p`
+LEFT JOIN `images` `i` ON `p`.`idProduct` = `i`.`idProduct`
+WHERE `status` = :status:
+GROUP BY `p`.`idProduct`, `p`.`name`, `p`.`price`', [...], false)
+ 4 APPPATH\Controllers\ProductsController.php(72): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductsController->getProductsImage()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductsController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-16 22:09:17 --> [Caused by] mysqli_sql_exception: Column 'status' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `p`.`idProduct`, `p`.`name`, `p`.`price`, MIN(i.url) AS image_url
+FROM `products` `p`
+LEFT JOIN `images` `i` ON `p`.`idProduct` = `i`.`idProduct`
+WHERE `status` = 1
+GROUP BY `p`.`idProduct`, `p`.`name`, `p`.`price`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.`idProduct`, `p`.`name`, `p`.`price`, MIN(i.url) AS image_url
+FROM `products` `p`
+LEFT JOIN `images` `i` ON `p`.`idProduct` = `i`.`idProduct`
+WHERE `status` = 1
+GROUP BY `p`.`idProduct`, `p`.`name`, `p`.`price`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.`idProduct`, `p`.`name`, `p`.`price`, MIN(i.url) AS image_url
+FROM `products` `p`
+LEFT JOIN `images` `i` ON `p`.`idProduct` = `i`.`idProduct`
+WHERE `status` = 1
+GROUP BY `p`.`idProduct`, `p`.`name`, `p`.`price`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `p`.`idProduct`, `p`.`name`, `p`.`price`, MIN(i.url) AS image_url
+FROM `products` `p`
+LEFT JOIN `images` `i` ON `p`.`idProduct` = `i`.`idProduct`
+WHERE `status` = :status:
+GROUP BY `p`.`idProduct`, `p`.`name`, `p`.`price`', [...], false)
+ 5 APPPATH\Controllers\ProductsController.php(72): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductsController->getProductsImage()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductsController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')

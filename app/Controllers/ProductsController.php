@@ -67,7 +67,7 @@ class ProductsController extends ResourceController
         $builder = $db->table('products p');
         $builder->select(' p.idProduct,p.name,p.price,MIN(i.url) AS image_url');
         $builder->join('images i', 'p.idProduct = i.idProduct', 'left');
-        $builder->where('status', 1);
+        $builder->where('p.status', 1);
         $builder->groupBy('p.idProduct, p.name, p.price');
         $result =  $builder->get()->getResultArray(); // o getResultArray()
         return $this->respond($result);
