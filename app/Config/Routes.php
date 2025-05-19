@@ -14,6 +14,7 @@ $routes->get('users/(:num)', 'UsersController::show/$1');
 $routes->put('users/(:num)', 'UsersController::update/$1');
 $routes->post('users/password/(:num)', 'UsersController::changePassword/$1');
 $routes->post('users/deactivate/(:num)', 'UsersController::deactivateUser/$1');
+$routes->post('users/login', 'UsersController::login');
 
 /* ADDRESSS */
 $routes->get('addresses/(:num)', 'AddressController::index/$1');

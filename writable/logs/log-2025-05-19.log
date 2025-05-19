@@ -1,0 +1,88 @@
+CRITICAL - 2025-05-19 17:15:55 --> ErrorException: Undefined variable $fileName
+[Method: POST, Route: categories]
+in APPPATH\Controllers\CategoriesController.php on line 55.
+ 1 APPPATH\Controllers\CategoriesController.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $fileName', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\CategoriesController.php', 55)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CategoriesController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriesController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-19 17:53:19 --> ErrorException: Undefined variable $fileName
+[Method: POST, Route: categories]
+in APPPATH\Controllers\CategoriesController.php on line 55.
+ 1 APPPATH\Controllers\CategoriesController.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $fileName', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\CategoriesController.php', 55)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CategoriesController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriesController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-19 17:53:25 --> ErrorException: Undefined variable $fileName
+[Method: POST, Route: categories]
+in APPPATH\Controllers\CategoriesController.php on line 55.
+ 1 APPPATH\Controllers\CategoriesController.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $fileName', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\CategoriesController.php', 55)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CategoriesController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriesController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-19 17:53:37 --> ErrorException: Undefined variable $fileName
+[Method: POST, Route: categories]
+in APPPATH\Controllers\CategoriesController.php on line 55.
+ 1 APPPATH\Controllers\CategoriesController.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $fileName', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\CategoriesController.php', 55)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CategoriesController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriesController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-19 17:53:56 --> ErrorException: Undefined variable $fileName
+[Method: POST, Route: categories]
+in APPPATH\Controllers\CategoriesController.php on line 55.
+ 1 APPPATH\Controllers\CategoriesController.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $fileName', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\CategoriesController.php', 55)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CategoriesController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriesController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-19 18:03:42 --> ErrorException: Undefined variable $fileName
+[Method: POST, Route: categories]
+in APPPATH\Controllers\CategoriesController.php on line 55.
+ 1 APPPATH\Controllers\CategoriesController.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $fileName', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\CategoriesController.php', 55)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CategoriesController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CategoriesController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-19 19:51:50 --> ErrorException: Undefined variable $usersModel
+[Method: POST, Route: users]
+in APPPATH\Controllers\UsersController.php on line 33.
+ 1 APPPATH\Controllers\UsersController.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usersModel', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\UsersController.php', 33)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsersController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-19 20:01:42 --> ErrorException: Undefined variable $usersModel
+[Method: POST, Route: users]
+in APPPATH\Controllers\UsersController.php on line 33.
+ 1 APPPATH\Controllers\UsersController.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usersModel', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\UsersController.php', 33)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsersController->create()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsersController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')

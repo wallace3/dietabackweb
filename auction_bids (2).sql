@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-05-2025 a las 23:58:57
+-- Tiempo de generación: 20-05-2025 a las 01:34:52
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -167,15 +167,6 @@ CREATE TABLE `cart` (
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `cart`
---
-
-INSERT INTO `cart` (`idCart`, `idProduct`, `idUser`, `created_at`, `updated_at`) VALUES
-(4, 2, 1, '2025-05-06 23:22:51', '2025-05-06 23:22:51'),
-(5, 4, 1, '2025-05-06 23:22:53', '2025-05-06 23:22:53'),
-(6, 1, 1, '2025-05-07 17:28:24', '2025-05-07 17:28:24');
-
 -- --------------------------------------------------------
 
 --
@@ -207,7 +198,14 @@ INSERT INTO `categories` (`idCategory`, `name`, `image`, `url`, `status`, `creat
 (32, 'Oportunidades', '1746816980_2e84d2d7eb7064b17dd2.jpg', 'uploads/images/categories/1746816980_2e84d2d7eb7064b17dd2.jpg', 1, '2025-05-09 18:56:20', '2025-05-09 18:56:20'),
 (33, 'Videojuegos', '1746817398_67facad83d53d7482edf.jpg', 'uploads/images/categories/1746817398_67facad83d53d7482edf.jpg', 1, '2025-05-09 19:03:18', '2025-05-09 19:03:18'),
 (34, 'Revistas & Comic\'s', '1746818205_a47cc9509e8e86b5c88a.jpg', 'uploads/images/categories/1746818205_a47cc9509e8e86b5c88a.jpg', 1, '2025-05-09 19:16:45', '2025-05-09 19:16:45'),
-(35, 'Coleccionables', '1747416209_99076a9c0d5845a4ae75.png', 'uploads/images/categories/1747416209_99076a9c0d5845a4ae75.png', 1, '2025-05-16 17:00:37', '2025-05-16 17:23:29');
+(35, 'Coleccionables', '1747416209_99076a9c0d5845a4ae75.png', 'uploads/images/categories/1747416209_99076a9c0d5845a4ae75.png', 1, '2025-05-16 17:00:37', '2025-05-16 17:23:29'),
+(36, 'Bolsas', '1747675946_b2e50cb700f3d54b314d.jpeg', 'uploads/images/categories/1747675946_b2e50cb700f3d54b314d.jpeg', 1, '2025-05-19 17:16:28', '2025-05-19 17:32:26'),
+(37, 'Libros', '1747676237_5018469f2e8e48969176.png', 'uploads/images/categories/1747676237_5018469f2e8e48969176.png', 1, '2025-05-19 17:37:05', '2025-05-19 17:37:17'),
+(38, 'Ropa', '1747676896_2d1d6a4b613e148f3c1a.png', 'uploads/images/categories/1747676896_2d1d6a4b613e148f3c1a.png', 1, '2025-05-19 17:48:03', '2025-05-19 17:48:16'),
+(39, 'Zapatos', '1747677024_df9ad9c5c65ac387f86f.png', 'uploads/images/categories/1747677024_df9ad9c5c65ac387f86f.png', 1, '2025-05-19 17:50:14', '2025-05-19 17:50:24'),
+(40, 'Artículos Religiosos', '1747677248_9802f23b17a5c39a5bef.jpg', 'uploads/images/categories/1747677248_9802f23b17a5c39a5bef.jpg', 1, '2025-05-19 17:54:08', '2025-05-19 17:54:08'),
+(41, 'Musica', '1747677322_9193e34fe753f6add9ad.jpg', 'uploads/images/categories/1747677322_9193e34fe753f6add9ad.jpg', 1, '2025-05-19 17:55:13', '2025-05-19 17:55:22'),
+(43, 'Únicos y de Colección', '1747677836_397fce99f9a2da9f39f8.png', 'uploads/images/categories/1747677836_397fce99f9a2da9f39f8.png', 1, '2025-05-19 18:03:56', '2025-05-19 18:03:56');
 
 -- --------------------------------------------------------
 
@@ -269,7 +267,9 @@ INSERT INTO `images` (`idImage`, `idProduct`, `name`, `url`, `status`, `created_
 (19, 10, '1747421303_316a9d097ca568d9d792.jpg', 'uploads/images/1747421303_316a9d097ca568d9d792.jpg', 1, '2025-05-16 18:48:23', '2025-05-16 18:48:23'),
 (20, 11, '1747425875_2df150aa346de2dd9f98.png', 'uploads/images/1747425875_2df150aa346de2dd9f98.png', 1, '2025-05-16 20:04:35', '2025-05-16 20:04:35'),
 (21, 12, '1747426003_dd3269bc12a2c3be0a01.jpg', 'uploads/images/1747426003_dd3269bc12a2c3be0a01.jpg', 1, '2025-05-16 20:06:43', '2025-05-16 20:06:43'),
-(22, 13, '1747426177_2ac1e2cd14c1f3295ac5.jpg', 'uploads/images/1747426177_2ac1e2cd14c1f3295ac5.jpg', 1, '2025-05-16 20:09:37', '2025-05-16 20:09:37');
+(22, 13, '1747426177_2ac1e2cd14c1f3295ac5.jpg', 'uploads/images/1747426177_2ac1e2cd14c1f3295ac5.jpg', 1, '2025-05-16 20:09:37', '2025-05-16 20:09:37'),
+(23, 7, '1747433625_680a14031941701416d1.jpg', 'uploads/images/1747433625_680a14031941701416d1.jpg', 1, '2025-05-16 22:13:45', '2025-05-16 22:13:45'),
+(24, 8, '1747433661_75c1a005054c27d8b8c7.jpg', 'uploads/images/1747433661_75c1a005054c27d8b8c7.jpg', 1, '2025-05-16 22:14:21', '2025-05-16 22:14:21');
 
 -- --------------------------------------------------------
 
@@ -392,7 +392,6 @@ INSERT INTO `subcategories` (`idSubcategory`, `idCategory`, `name`, `status`, `c
 
 CREATE TABLE `users` (
   `idUser` int(11) NOT NULL,
-  `username` varchar(100) NOT NULL,
   `name` varchar(100) NOT NULL,
   `lastName` varchar(100) NOT NULL,
   `email` varchar(150) NOT NULL,
@@ -407,9 +406,13 @@ CREATE TABLE `users` (
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`idUser`, `username`, `name`, `lastName`, `email`, `password`, `idType`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Pedro', 'Azael', 'Hernandez', 'pedro@gmail.com', '$2y$10$AFRhdylJCtZZgDBH.BeRHeaE2bsp5P9B07V4cM87m8.TPKtYco0.a', 1, 0, '2025-03-21 23:28:24', '2025-04-09 02:12:44'),
-(4, 'alegq', 'Alejandra', 'Quiñones', 'ale@zapata.com', '$2y$10$n9D2UY8E0lFFKSneKGIVZOrcgayrIfWQBbzvZl1ytB6XlDvMYd9Ia', 4, 0, '2025-04-08 20:25:50', '2025-04-09 02:13:51');
+INSERT INTO `users` (`idUser`, `name`, `lastName`, `email`, `password`, `idType`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Azael', 'Hernandez', 'pedro@gmail.com', '$2y$10$AFRhdylJCtZZgDBH.BeRHeaE2bsp5P9B07V4cM87m8.TPKtYco0.a', 1, 0, '2025-03-21 23:28:24', '2025-04-09 02:12:44'),
+(4, 'Alejandra', 'Quiñones', 'ale@zapata.com', '$2y$10$n9D2UY8E0lFFKSneKGIVZOrcgayrIfWQBbzvZl1ytB6XlDvMYd9Ia', 4, 0, '2025-04-08 20:25:50', '2025-04-09 02:13:51'),
+(8, 'Edgar', 'Hernandez', 'edhernandezw@gmail.com', '$2y$10$wQ/QtObIDZAp0RoG6p2uMeIyZ/s8ULIQLMtTu6ALs.nwsWQlxsoSO', 8, 1, '2025-05-19 20:01:17', '2025-05-19 20:01:17'),
+(9, 'Miguel', 'Peralta', 'mpe@gmail.com', '$2y$10$PNSeWrRyEkGLzuuLFP87H.b3g1vaCcWvrFGSpLTQ..3bvfBa32wA2', 8, 1, '2025-05-19 20:20:12', '2025-05-19 20:20:12'),
+(10, 'rodriguez', 'martinez', 'r@gmail.com', '$2y$10$Kzx5Y5qL8rQp9ZmpNgAWw.IgjtCI95Oo5e/9KxctdZGMy0U.vsWzG', 8, 1, '2025-05-19 20:20:39', '2025-05-19 20:20:39'),
+(11, 'Maria', 'magdalena', 'maqa@gmail.com', '$2y$10$h.MVYXljklZtrNSiGIBJXeR5in8vDg1YOzuI.lWrWnxbo34I4Mp6m', 8, 1, '2025-05-19 20:24:09', '2025-05-19 20:24:09');
 
 -- --------------------------------------------------------
 
@@ -448,13 +451,6 @@ CREATE TABLE `wishlist` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `wishlist`
---
-
-INSERT INTO `wishlist` (`idWishList`, `idProduct`, `idUser`, `created_at`, `updated_at`) VALUES
-(3, 1, 1, '2025-05-07 18:48:20', '2025-05-07 18:48:20');
 
 --
 -- Índices para tablas volcadas
@@ -548,7 +544,8 @@ ALTER TABLE `subcategories`
 -- Indices de la tabla `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`idUser`);
+  ADD PRIMARY KEY (`idUser`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indices de la tabla `user_types`
@@ -606,7 +603,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `idCategory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `idCategory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT de la tabla `contracts`
@@ -624,7 +621,7 @@ ALTER TABLE `contract_details`
 -- AUTO_INCREMENT de la tabla `images`
 --
 ALTER TABLE `images`
-  MODIFY `idImage` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `idImage` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
@@ -654,7 +651,7 @@ ALTER TABLE `subcategories`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `user_types`

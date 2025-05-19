@@ -27,7 +27,12 @@ class UsersController extends ResourceController
         {
             $data = $this->request->getJSON(true);
             if (!isset($data['password'])) {
-                return $this->failValidationErrors('La contraseña es obligatoria.');
+                return $this->respond(['error' => 'Tiene que llenar la contraseña'], 400);
+            }
+
+            $user = $this->usersModel->where('email', trim($data['email']))->first();
+            if ($user) {
+                return $this->respond(['error' => 'El email ya está registrado'], 400);
             }
 
             $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
@@ -37,7 +42,7 @@ class UsersController extends ResourceController
             }
 
             if ($this->usersModel->insert($data)) {
-                return $this->respondCreated(['message' => 'Usuario creado correctamente']);
+                return $this->respondCreated(['message' => 'Usuario creado correctamente', 'status'=>200]);
             } 
         }
     }
@@ -93,4 +98,17 @@ class UsersController extends ResourceController
             return $this->failNotFound('Usuario no encontrado');
         }
     }
+
+    public function login()
+    {
+        $data = $this->request->getJSON(true);
+        $user = $this->usersModel->where('email', $data['email'])->first();
+
+        if ($user && password_verify($data['password'], $user['password'])) {
+            return $this->respond(['message' => 'Login exitoso', 'user' => $user]);
+        } else {
+            return $this->respond(['error' => 'Credenciales inválidas'], 401);
+        }
+    }
+
 }
