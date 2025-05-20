@@ -50,7 +50,7 @@ class AuctionDetailsController extends ResourceController
     {
         $db  = \Config\Database::connect();
         $builder = $db->table('auction_details ad');
-        $builder->select('ad.idAuctionDetail, ad.idAuction, p.price, p.idProduct, p.name, p.description, MIN(i.url) AS image_url, MIN(b.amount) as bid');
+        $builder->select('ad.idAuctionDetail, ad.idAuction, p.price, p.idProduct, p.name, p.description, MIN(i.url) AS image_url, MAX(b.amount) as bid');
         $builder->join('products p', 'ad.idProduct = p.idProduct', 'left');
         $builder->join('images i', 'ad.idProduct = i.idProduct', 'left');
         $builder->join('bids b', 'ad.idProduct = b.idProduct AND ad.idAuction = b.idAuction', 'left');

@@ -54,6 +54,7 @@ $routes->delete('images/(:num)', 'ImagesController::delete/$1');
 /* AUCTION */
 $routes->get('auction', 'AuctionController::index');
 $routes->get('auction/active', 'AuctionController::getActives');
+$routes->get('auction/amount/(:num)', 'AuctionController::getAuctionAmount/$1');
 $routes->post('auction', 'AuctionController::create');
 $routes->post('auction/create', 'AuctionController::createAuction');
 $routes->put('auction/(:num)', 'AuctionController::endAuction/$1');
@@ -72,6 +73,7 @@ $routes->delete('auction/details/delete/(:num)', 'AuctionDetailsController::dele
 $routes->get('bids', 'BidsController::index');
 $routes->get('bids/product/(:num)', 'BidsController::productBids/$1');
 $routes->post('bids', 'BidsController::create');
+$routes->get('bids/history', 'BidsController::getBids');
 
 /* SUBCATEGORIES */
 $routes->get('subcategories', 'SubcategoriesController::index');

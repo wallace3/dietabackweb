@@ -8,7 +8,7 @@ class BidsModel extends Model
 {
     protected $table = 'bids';
     protected $primaryKey = 'idBid';
-    protected $allowedFields = ['idProduct','idUser','amount','status','created_at','updated_at'];
+    protected $allowedFields = ['idAuction','idProduct','idUser','amount','status','created_at','updated_at'];
     protected $useTimestamps = true;
     protected $createdField = 'created_at';
     protected $updatedField = 'updated_at';

@@ -37,6 +37,16 @@ class AuctionController extends ResourceController
         }
     }
 
+    public function getAuctionAmount($id = null)
+    {
+        $db      = \Config\Database::connect();
+        $builder = $db->table('auction');
+        $builder->select('amount');
+        $query = $builder->where('idAuction', $id)->get();
+        $result = $query->getResult();
+        return $this->respond($result);
+    }
+
     public function getActives()
     {
         $db      = \Config\Database::connect();
@@ -71,6 +81,7 @@ class AuctionController extends ResourceController
         $description = $this->request->getPost('description');
         $user = $this->request->getPost('idUser');
         $startDate = $this->request->getPost('startDate');
+        $amount = $this->request->getPost('amount');
         $endDate = $this->request->getPost('endDate');
         $file = $this->request->getFile('image_url');
 
@@ -91,6 +102,7 @@ class AuctionController extends ResourceController
             'image_url'=> 'uploads/images/auctions/' . $fileName,
             'startTime' => $startDate,
             'endTime' => $endDate,
+            'amount' => $amount,
             'idUser' => $user,
             'status' => $status
         ]);
@@ -109,6 +121,7 @@ class AuctionController extends ResourceController
         $description =  $this->request->getPost('description');
         $endDate =  $this->request->getPost('endDate');
         $startDate = $this->request->getPost('startDate');
+        $amount = $this->request->getPost('amount');
         $file = $this->request->getFile('image_url');
 
         $uploadPath = FCPATH . 'uploads/images/auctions/';
@@ -127,19 +140,10 @@ class AuctionController extends ResourceController
             'image_url'=> 'uploads/images/auctions/' .$fileName,
             'startTime' => $startDate,
             'endTime' => $endDate,
+            'amount' => $amount,
             'idUser' => 1,
             'status' => 1
         ]);
-
-        var_dump($this->auctionModel->update($id,[
-            'name' => $auction,
-            'description' => $description,
-            'image_url'=> 'uploads/images/categories/' .$fileName,
-            'startTime' => $startDate,
-            'endTime' => $endDate,
-            'idUser' => 1,
-            'status' => 1
-        ]));
 
         return $this->respond([
             'message' => 'Subasta actualizada correctamente',

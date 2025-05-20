@@ -43,4 +43,20 @@ class BidsController extends ResourceController{
         return $this->respond($result);
     }
 
+    public function getBids()
+    {
+        $db      = \Config\Database::connect();
+        $builder = $db->table('bids b');
+        $builder->select('b.amount, b.created_at, b.idAuction, b.idBid, a.name as auction, p.name, u.name as firstName, u.lastName, MIN(i.url) as image_url');
+        $builder->join('products p', 'b.idProduct = p.idProduct', 'left');
+        $builder->join('users u', 'b.idUser = u.idUser', 'left');
+        $builder->join('auction a', 'b.idAuction = a.idAuction', 'left');
+        $builder->join('images i', 'b.idProduct = i.idProduct', 'left');
+        $builder->groupBy('p.name, u.lastName, u.name, b.amount, b.idBid, b.idAuction, a.name, b.created_at');
+        $query = $builder->get();
+        $result = $query->getResult();
+        return $this->respond($result);
+
+    }
+
 }
