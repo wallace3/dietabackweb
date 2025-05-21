@@ -24,6 +24,7 @@ $routes->post('address', 'AddressController::create');
 $routes->post('address/update/(:num)', 'AddressController::update/$1');
 $routes->delete('address/(:num)', 'AddressController::delete/$1');
 $routes->put('address/deactivate/(:num)', 'AddressController::deactivateAddress/$1');
+$routes->put('address/default/(:num)/(:num)', 'AddressController::setDefault/$1/$2');
 
 /* USER_TYPES */
 $routes->get('types', 'TypesController::index');

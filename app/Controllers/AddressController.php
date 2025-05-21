@@ -95,5 +95,48 @@ class AddressController extends ResourceController
         return $this->respond(["message" => "Direccion default", "status"=>200, "data" => $result]);
     }
  
+    public function setDefault($id = null, $userId = null)
+    {
+    
+       $db = \Config\Database::connect();
+        $builder = $db->table('address');
 
+        var_dump($userId);
+        var_dump($id);
+
+    // Validar que la dirección pertenezca al usuario
+    $address = $builder
+        ->where('idAddress', $id)
+        ->where('idUser', $userId)
+        ->get()
+        ->getRow();
+
+    if (!$address) {
+        return $this->respond(["message" => "La dirección no existe o no pertenece al usuario", "status" => 404]);
+    }
+
+    // Iniciar la transacción
+    $db->transStart();
+
+    // Quitar la predeterminada anterior
+    $builder
+        ->where('idUser', $userId)
+        ->where('defaultAddress', 1)
+        ->update(['defaultAddress' => 0]);
+
+    // Establecer la nueva dirección como predeterminada
+    $builder
+        ->where('idAddress', $id)
+        ->where('idUser', $userId)
+        ->update(['defaultAddress' => 1]);
+
+    $db->transComplete();
+
+    if ($db->transStatus() === false) {
+        return $this->respond(["message" => "Error al actualizar dirección predeterminada", "status" => 400]);
+    }
+
+    return $this->respond(["message" => "Dirección predeterminada actualizada correctamente", "status" => 200]);
+
+}
 }

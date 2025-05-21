@@ -8,7 +8,7 @@
     {
         protected $table = 'address';
         protected $primaryKey = 'idAddress';
-        protected $allowedFields = ['idUser','street','suburb','state','cp','country', 'phone', 'reference', 'defaultAddress','status', 'created_at', 'updated_at'];
+        protected $allowedFields = ['idUser','name','street','suburb','city','state','cp','country', 'reference', 'defaultAddress','status', 'created_at', 'updated_at'];
         protected $useTimestamps = true;
         protected $createdField = 'created_at';
         protected $updatedField = 'updated_at';
