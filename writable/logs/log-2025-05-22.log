@@ -1,0 +1,1806 @@
+ERROR - 2025-05-22 19:59:23 --> mysqli_sql_exception: Not unique table/alias: 'p' in C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php(327): mysqli->query('\n            SE...', 0)
+#1 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('\n            SE...')
+#2 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('\n            SE...')
+#3 C:\xampp\htdocs\dietabackweb\app\Controllers\AuctionController.php(199): CodeIgniter\Database\BaseConnection->query('\n            SE...', Array)
+#4 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(933): App\Controllers\AuctionController->getResultAuctions('6')
+#5 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+#6 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\dietabackweb\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\dietabackweb\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\dietabackweb\public\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 C:\xampp\htdocs\dietabackweb\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-05-22 19:59:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'p'
+[Method: GET, Route: auction/results/6]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 APPPATH\Controllers\AuctionController.php(199): CodeIgniter\Database\BaseConnection->query('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = ?
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->getResultAuctions('6')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-22 19:59:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'p'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = \'6\'
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = \'6\'
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ')
+ 3 APPPATH\Controllers\AuctionController.php(199): CodeIgniter\Database\BaseConnection->query('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = ?
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->getResultAuctions('6')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-22 19:59:23 --> [Caused by] mysqli_sql_exception: Not unique table/alias: 'p'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = \'6\'
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = \'6\'
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = \'6\'
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ')
+ 4 APPPATH\Controllers\AuctionController.php(199): CodeIgniter\Database\BaseConnection->query('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = ?
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->getResultAuctions('6')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+ERROR - 2025-05-22 19:59:27 --> mysqli_sql_exception: Not unique table/alias: 'p' in C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php(327): mysqli->query('\n            SE...', 0)
+#1 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('\n            SE...')
+#2 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('\n            SE...')
+#3 C:\xampp\htdocs\dietabackweb\app\Controllers\AuctionController.php(199): CodeIgniter\Database\BaseConnection->query('\n            SE...', Array)
+#4 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(933): App\Controllers\AuctionController->getResultAuctions('7')
+#5 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+#6 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\dietabackweb\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\dietabackweb\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\dietabackweb\public\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 C:\xampp\htdocs\dietabackweb\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-05-22 19:59:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'p'
+[Method: GET, Route: auction/results/7]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 APPPATH\Controllers\AuctionController.php(199): CodeIgniter\Database\BaseConnection->query('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = ?
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->getResultAuctions('7')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-22 19:59:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'p'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = \'7\'
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = \'7\'
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ')
+ 3 APPPATH\Controllers\AuctionController.php(199): CodeIgniter\Database\BaseConnection->query('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = ?
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->getResultAuctions('7')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-22 19:59:27 --> [Caused by] mysqli_sql_exception: Not unique table/alias: 'p'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = \'7\'
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = \'7\'
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = \'7\'
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ')
+ 4 APPPATH\Controllers\AuctionController.php(199): CodeIgniter\Database\BaseConnection->query('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = ?
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->getResultAuctions('7')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+ERROR - 2025-05-22 19:59:29 --> mysqli_sql_exception: Not unique table/alias: 'p' in C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php(327): mysqli->query('\n            SE...', 0)
+#1 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('\n            SE...')
+#2 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('\n            SE...')
+#3 C:\xampp\htdocs\dietabackweb\app\Controllers\AuctionController.php(199): CodeIgniter\Database\BaseConnection->query('\n            SE...', Array)
+#4 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(933): App\Controllers\AuctionController->getResultAuctions('8')
+#5 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+#6 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\dietabackweb\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\dietabackweb\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\dietabackweb\public\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 C:\xampp\htdocs\dietabackweb\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-05-22 19:59:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'p'
+[Method: GET, Route: auction/results/8]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 APPPATH\Controllers\AuctionController.php(199): CodeIgniter\Database\BaseConnection->query('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = ?
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->getResultAuctions('8')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-22 19:59:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'p'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = \'8\'
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = \'8\'
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ')
+ 3 APPPATH\Controllers\AuctionController.php(199): CodeIgniter\Database\BaseConnection->query('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = ?
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->getResultAuctions('8')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-22 19:59:29 --> [Caused by] mysqli_sql_exception: Not unique table/alias: 'p'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = \'8\'
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = \'8\'
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = \'8\'
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ')
+ 4 APPPATH\Controllers\AuctionController.php(199): CodeIgniter\Database\BaseConnection->query('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = ?
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->getResultAuctions('8')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+ERROR - 2025-05-22 19:59:43 --> mysqli_sql_exception: Not unique table/alias: 'p' in C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php(327): mysqli->query('\n            SE...', 0)
+#1 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('\n            SE...')
+#2 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('\n            SE...')
+#3 C:\xampp\htdocs\dietabackweb\app\Controllers\AuctionController.php(199): CodeIgniter\Database\BaseConnection->query('\n            SE...', Array)
+#4 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(933): App\Controllers\AuctionController->getResultAuctions('8')
+#5 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+#6 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\dietabackweb\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\dietabackweb\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\dietabackweb\public\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 C:\xampp\htdocs\dietabackweb\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-05-22 19:59:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'p'
+[Method: GET, Route: auction/results/8]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 APPPATH\Controllers\AuctionController.php(199): CodeIgniter\Database\BaseConnection->query('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = ?
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->getResultAuctions('8')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-22 19:59:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'p'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = \'8\'
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = \'8\'
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ')
+ 3 APPPATH\Controllers\AuctionController.php(199): CodeIgniter\Database\BaseConnection->query('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = ?
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->getResultAuctions('8')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-22 19:59:43 --> [Caused by] mysqli_sql_exception: Not unique table/alias: 'p'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = \'8\'
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = \'8\'
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = \'8\'
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ')
+ 4 APPPATH\Controllers\AuctionController.php(199): CodeIgniter\Database\BaseConnection->query('
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = ?
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->getResultAuctions('8')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+ERROR - 2025-05-22 20:24:44 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+             ...' at line 11 in C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php(327): mysqli->query('\n            SE...', 0)
+#1 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('\n            SE...')
+#2 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('\n            SE...')
+#3 C:\xampp\htdocs\dietabackweb\app\Controllers\AuctionController.php(231): CodeIgniter\Database\BaseConnection->query('\n            SE...', Array)
+#4 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(933): App\Controllers\AuctionController->getUnderBidders('8')
+#5 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+#6 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\dietabackweb\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\dietabackweb\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\dietabackweb\public\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 C:\xampp\htdocs\dietabackweb\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-05-22 20:24:44 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+             ...' at line 11
+[Method: GET, Route: auction/underbidders/8]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 APPPATH\Controllers\AuctionController.php(231): CodeIgniter\Database\BaseConnection->query('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            WHERE b.idAuction = ?
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = ?
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->getUnderBidders('8')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-22 20:24:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+             ...' at line 11
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            WHERE b.idAuction = ?
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = ?
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            WHERE b.idAuction = ?
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = ?
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ')
+ 3 APPPATH\Controllers\AuctionController.php(231): CodeIgniter\Database\BaseConnection->query('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            WHERE b.idAuction = ?
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = ?
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->getUnderBidders('8')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-22 20:24:44 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+             ...' at line 11
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            WHERE b.idAuction = ?
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = ?
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            WHERE b.idAuction = ?
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = ?
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            WHERE b.idAuction = ?
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = ?
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ')
+ 4 APPPATH\Controllers\AuctionController.php(231): CodeIgniter\Database\BaseConnection->query('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            WHERE b.idAuction = ?
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = ?
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->getUnderBidders('8')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+ERROR - 2025-05-22 21:47:12 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'MIN(i.url) as image_url
+            FROM bids b
+            JOIN users u ON u...' at line 8 in C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php(327): mysqli->query('\n            SE...', 0)
+#1 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('\n            SE...')
+#2 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('\n            SE...')
+#3 C:\xampp\htdocs\dietabackweb\app\Controllers\AuctionController.php(233): CodeIgniter\Database\BaseConnection->query('\n            SE...', Array)
+#4 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(933): App\Controllers\AuctionController->getUnderBidders('8')
+#5 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+#6 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\dietabackweb\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\dietabackweb\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\dietabackweb\public\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 C:\xampp\htdocs\dietabackweb\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-05-22 21:47:12 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'MIN(i.url) as image_url
+            FROM bids b
+            JOIN users u ON u...' at line 8
+[Method: GET, Route: auction/underbidders/8]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 APPPATH\Controllers\AuctionController.php(233): CodeIgniter\Database\BaseConnection->query('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid
+                MIN(i.url) as image_url
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            JOIN images i ON b.idProduct = i.idProduct
+            WHERE b.idAuction = ?
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = ?
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->getUnderBidders('8')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-22 21:47:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'MIN(i.url) as image_url
+            FROM bids b
+            JOIN users u ON u...' at line 8
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid
+                MIN(i.url) as image_url
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            JOIN images i ON b.idProduct = i.idProduct
+            WHERE b.idAuction = \'8\'
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = \'8\'
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid
+                MIN(i.url) as image_url
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            JOIN images i ON b.idProduct = i.idProduct
+            WHERE b.idAuction = \'8\'
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = \'8\'
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ')
+ 3 APPPATH\Controllers\AuctionController.php(233): CodeIgniter\Database\BaseConnection->query('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid
+                MIN(i.url) as image_url
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            JOIN images i ON b.idProduct = i.idProduct
+            WHERE b.idAuction = ?
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = ?
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->getUnderBidders('8')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-22 21:47:12 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'MIN(i.url) as image_url
+            FROM bids b
+            JOIN users u ON u...' at line 8
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid
+                MIN(i.url) as image_url
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            JOIN images i ON b.idProduct = i.idProduct
+            WHERE b.idAuction = \'8\'
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = \'8\'
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid
+                MIN(i.url) as image_url
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            JOIN images i ON b.idProduct = i.idProduct
+            WHERE b.idAuction = \'8\'
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = \'8\'
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid
+                MIN(i.url) as image_url
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            JOIN images i ON b.idProduct = i.idProduct
+            WHERE b.idAuction = \'8\'
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = \'8\'
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ')
+ 4 APPPATH\Controllers\AuctionController.php(233): CodeIgniter\Database\BaseConnection->query('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid
+                MIN(i.url) as image_url
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            JOIN images i ON b.idProduct = i.idProduct
+            WHERE b.idAuction = ?
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = ?
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->getUnderBidders('8')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+ERROR - 2025-05-22 21:55:38 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN ...' at line 11 in C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\dietabackweb\system\Database\MySQLi\Connection.php(327): mysqli->query('\n            SE...', 0)
+#1 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('\n            SE...')
+#2 C:\xampp\htdocs\dietabackweb\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('\n            SE...')
+#3 C:\xampp\htdocs\dietabackweb\app\Controllers\AuctionController.php(236): CodeIgniter\Database\BaseConnection->query('\n            SE...', Array)
+#4 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(933): App\Controllers\AuctionController->getUnderBidders('8')
+#5 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+#6 C:\xampp\htdocs\dietabackweb\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\dietabackweb\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\dietabackweb\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\dietabackweb\public\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 C:\xampp\htdocs\dietabackweb\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2025-05-22 21:55:38 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN ...' at line 11
+[Method: GET, Route: auction/underbidders/8]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 APPPATH\Controllers\AuctionController.php(236): CodeIgniter\Database\BaseConnection->query('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                u.lastNAme AS apellidos,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid,
+                MIN(i.url) as image_url,
+                a.name as auction,
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            JOIN images i ON b.idProduct = i.idProduct
+            JOIN auction a ON a.idAuction = b.idAuction
+            WHERE b.idAuction = ?
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = ?
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->getUnderBidders('8')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-22 21:55:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN ...' at line 11
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                u.lastNAme AS apellidos,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid,
+                MIN(i.url) as image_url,
+                a.name as auction,
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            JOIN images i ON b.idProduct = i.idProduct
+            JOIN auction a ON a.idAuction = b.idAuction
+            WHERE b.idAuction = \'8\'
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = \'8\'
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                u.lastNAme AS apellidos,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid,
+                MIN(i.url) as image_url,
+                a.name as auction,
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            JOIN images i ON b.idProduct = i.idProduct
+            JOIN auction a ON a.idAuction = b.idAuction
+            WHERE b.idAuction = \'8\'
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = \'8\'
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ')
+ 3 APPPATH\Controllers\AuctionController.php(236): CodeIgniter\Database\BaseConnection->query('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                u.lastNAme AS apellidos,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid,
+                MIN(i.url) as image_url,
+                a.name as auction,
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            JOIN images i ON b.idProduct = i.idProduct
+            JOIN auction a ON a.idAuction = b.idAuction
+            WHERE b.idAuction = ?
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = ?
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->getUnderBidders('8')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-22 21:55:38 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN ...' at line 11
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                u.lastNAme AS apellidos,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid,
+                MIN(i.url) as image_url,
+                a.name as auction,
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            JOIN images i ON b.idProduct = i.idProduct
+            JOIN auction a ON a.idAuction = b.idAuction
+            WHERE b.idAuction = \'8\'
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = \'8\'
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                u.lastNAme AS apellidos,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid,
+                MIN(i.url) as image_url,
+                a.name as auction,
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            JOIN images i ON b.idProduct = i.idProduct
+            JOIN auction a ON a.idAuction = b.idAuction
+            WHERE b.idAuction = \'8\'
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = \'8\'
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                u.lastNAme AS apellidos,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid,
+                MIN(i.url) as image_url,
+                a.name as auction,
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            JOIN images i ON b.idProduct = i.idProduct
+            JOIN auction a ON a.idAuction = b.idAuction
+            WHERE b.idAuction = \'8\'
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = \'8\'
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ')
+ 4 APPPATH\Controllers\AuctionController.php(236): CodeIgniter\Database\BaseConnection->query('
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                u.lastNAme AS apellidos,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                MAX(b.amount) AS lost_bid,
+                MIN(i.url) as image_url,
+                a.name as auction,
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            JOIN images i ON b.idProduct = i.idProduct
+            JOIN auction a ON a.idAuction = b.idAuction
+            WHERE b.idAuction = ?
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = ?
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->getUnderBidders('8')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')

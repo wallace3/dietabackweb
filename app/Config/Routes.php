@@ -61,7 +61,9 @@ $routes->post('auction/create', 'AuctionController::createAuction');
 $routes->put('auction/(:num)', 'AuctionController::endAuction/$1');
 $routes->delete('auction/(:num)', 'AuctionController::delete/$1');
 $routes->post('auction/update/(:num)', 'AuctionController::updateAuction/$1');
-
+$routes->get('auction/endedAuctions', 'AuctionController::getEndedAuctions');
+$routes->get('auction/results/(:num)', 'AuctionController::getResultAuctions/$1');
+$routes->get('auction/underbidders/(:num)', 'AuctionController::getUnderBidders/$1');
 
 /* AUCTION DETAILS */
 $routes->get('auction/details', 'AuctionDetailsController::index');

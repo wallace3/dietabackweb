@@ -152,4 +152,91 @@ class AuctionController extends ResourceController
 
         ], 200);
     }
+
+    public function getEndedAuctions()
+    {
+        $db      = \Config\Database::connect();
+        $builder = $db->table('auction');
+        $query = $builder->where('status', 0)->get();
+        $result = $query->getResultArray();
+        return $this->respond($result);
+    }
+
+    public function getResultAuctions($id=null)
+    {
+       $db = \Config\Database::connect();
+
+        $sql = "
+            SELECT 
+                ad.idAuctionDetail, 
+                ad.idAuction, 
+                p.name as product, 
+                p.price, 
+                MIN(i.url) as image_url,
+                b_max.amount as bid,
+                b_max.idUser,
+                a.name
+            FROM auction_details ad 
+            JOIN products p ON ad.idProduct = p.idProduct 
+            JOIN auction a ON ad.idAuction = a.idAuction
+            LEFT JOIN images i ON ad.idProduct = i.idProduct
+            LEFT JOIN (
+                SELECT b1.idAuction, b1.idProduct, b1.amount, b1.idUser
+                FROM bids b1
+                INNER JOIN (
+                    SELECT idAuction, idProduct, MAX(amount) as max_amount
+                    FROM bids
+                    GROUP BY idAuction, idProduct
+                ) b2 
+                ON b1.idAuction = b2.idAuction 
+                AND b1.idProduct = b2.idProduct 
+                AND b1.amount = b2.max_amount
+            ) b_max ON ad.idAuction = b_max.idAuction AND ad.idProduct = b_max.idProduct
+            WHERE ad.idAuction = ?
+            GROUP BY ad.idAuctionDetail, ad.idAuction, p.price, p.name, b_max.amount, b_max.idUser, a.name
+        ";
+
+        $query = $db->query($sql, [$id]); // 8 es el idAuction, puedes pasarlo dinámicamente
+
+        $result = $query->getResultArray();
+        return $this->respond($result);
+    }
+
+    function getUnderBidders($id=null)
+    {
+        $db = \Config\Database::connect();
+
+        $sql = "
+            SELECT 
+                b.idUser,
+                u.name AS user_name,
+                u.lastNAme AS apellidos,
+                b.idAuction,
+                b.idProduct,
+                p.name AS product,
+                p.price,
+                MAX(b.amount) AS lost_bid,
+                MIN(i.url) as image_url,
+                a.name as auction
+            FROM bids b
+            JOIN users u ON u.idUser = b.idUser
+            JOIN products p ON p.idProduct = b.idProduct
+            JOIN images i ON b.idProduct = i.idProduct
+            JOIN auction a ON a.idAuction = b.idAuction
+            WHERE b.idAuction = ?
+            AND (b.idAuction, b.idProduct, b.amount) NOT IN (
+                SELECT idAuction, idProduct, MAX(amount)
+                FROM bids
+                WHERE idAuction = ?
+                GROUP BY idAuction, idProduct
+            )
+            GROUP BY b.idUser, b.idAuction, b.idProduct, u.name, p.name
+            ORDER BY b.idUser, b.idProduct;
+        ";
+
+        $query = $db->query($sql, [$id,$id]); // 8 es el idAuction, puedes pasarlo dinámicamente
+
+        $result = $query->getResultArray();
+        return $this->respond($result);
+    }
 }
