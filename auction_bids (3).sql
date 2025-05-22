@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-05-2025 a las 01:33:01
+-- Tiempo de generación: 23-05-2025 a las 00:03:46
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -80,9 +80,9 @@ CREATE TABLE `auction` (
 --
 
 INSERT INTO `auction` (`idAuction`, `name`, `description`, `image_url`, `startTime`, `endTime`, `amount`, `idUser`, `status`, `created_at`, `updated_at`) VALUES
-(6, 'Subasta de Libros', 'Subasta de Libros', 'uploads/images/auctions/1747244123_0bd7fcec23b05600fe5f.jpg', '2025-05-16 11:58:00', '2025-05-13 11:58:00', 100, 1, 1, '2025-05-09 17:58:18', '2025-05-14 17:35:23'),
-(7, 'Subasta de Joyería', 'Subasta de joyería', 'uploads/images/auctions/1747239870_992ec67332505ed153fb.jpg', '2025-05-09 00:36:00', '2025-05-16 13:37:00', 500, 0, 1, '2025-05-14 16:24:30', '2025-05-14 16:24:30'),
-(8, 'Subasta de Musica', 'Subasta de Vinyles', 'uploads/images/auctions/1747771247_96ba3a83c674739bab10.jpg', '2025-05-20 13:59:00', '2025-05-22 13:59:00', 100, 1, 1, '2025-05-20 20:00:47', '2025-05-20 20:00:47');
+(6, 'Subasta de Libros', 'Subasta de Libros', 'uploads/images/auctions/1747244123_0bd7fcec23b05600fe5f.jpg', '2025-05-16 11:58:00', '2025-05-13 11:58:00', 100, 1, 0, '2025-05-09 17:58:18', '2025-05-14 17:35:23'),
+(7, 'Subasta de Joyería', 'Subasta de joyería', 'uploads/images/auctions/1747239870_992ec67332505ed153fb.jpg', '2025-05-09 00:36:00', '2025-05-16 13:37:00', 500, 0, 0, '2025-05-14 16:24:30', '2025-05-14 16:24:30'),
+(8, 'Subasta de Musica', 'Subasta de Vinyles', 'uploads/images/auctions/1747771247_96ba3a83c674739bab10.jpg', '2025-05-20 13:59:00', '2025-05-22 13:59:00', 100, 1, 0, '2025-05-20 20:00:47', '2025-05-20 20:00:47');
 
 -- --------------------------------------------------------
 
@@ -112,7 +112,8 @@ INSERT INTO `auction_details` (`idAuctionDetail`, `idAuction`, `idProduct`, `idU
 (11, 7, 2, 1, 1, '2025-05-14 19:21:03', '2025-05-14 19:21:03'),
 (12, 7, 4, 1, 1, '2025-05-14 19:21:08', '2025-05-14 19:21:08'),
 (13, 8, 12, 1, 1, '2025-05-20 20:01:18', '2025-05-20 20:01:18'),
-(14, 8, 7, 1, 1, '2025-05-20 20:01:22', '2025-05-20 20:01:22');
+(14, 8, 7, 1, 1, '2025-05-20 20:01:22', '2025-05-20 20:01:22'),
+(15, 8, 10, 1, 1, '2025-05-22 22:04:53', '2025-05-22 22:04:53');
 
 -- --------------------------------------------------------
 
@@ -161,7 +162,7 @@ CREATE TABLE `bids` (
 INSERT INTO `bids` (`idBid`, `idAuction`, `idProduct`, `idUser`, `amount`, `status`, `created_at`, `updated_at`) VALUES
 (9, 8, 12, 9, '1000', 1, '2025-05-20 22:43:08', '2025-05-20 22:43:08'),
 (10, 8, 12, 9, '1100', 1, '2025-05-20 22:52:52', '2025-05-20 22:52:52'),
-(11, 8, 12, 9, '1200', 1, '2025-05-20 22:55:44', '2025-05-20 22:55:44'),
+(11, 8, 12, 7, '1200', 1, '2025-05-20 22:55:44', '2025-05-20 22:55:44'),
 (12, 8, 7, 9, '12100', 1, '2025-05-20 22:57:07', '2025-05-20 22:57:07');
 
 -- --------------------------------------------------------
@@ -644,7 +645,7 @@ ALTER TABLE `auction`
 -- AUTO_INCREMENT de la tabla `auction_details`
 --
 ALTER TABLE `auction_details`
-  MODIFY `idAuctionDetail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `idAuctionDetail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `banners`
@@ -656,7 +657,7 @@ ALTER TABLE `banners`
 -- AUTO_INCREMENT de la tabla `bids`
 --
 ALTER TABLE `bids`
-  MODIFY `idBid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idBid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `cart`
