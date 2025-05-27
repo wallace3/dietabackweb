@@ -32,7 +32,6 @@ class CategoriesController extends ResourceController
         $builder->groupBy('c.idCategory, c.name, c.image, c.url');
         $result =  $builder->get()->getResultArray(); // o getResultArray()
         return $this->respond($result);
-
     }
 
     public function create(){
@@ -68,7 +67,7 @@ class CategoriesController extends ResourceController
 
     public function update($id = null){
         $name = $this->request->getPost('name');
-        $file = $this->request->getFile('image');
+        $file = $this->request->getFile('image') ?? null;
        
         $uploadPath = FCPATH . 'uploads/images/categories/';
         if (!is_dir($uploadPath)) {
@@ -78,19 +77,21 @@ class CategoriesController extends ResourceController
         if ($file && $file->isValid() && !$file->hasMoved()) {
             $fileName = $file->getRandomName();
             $file->move($uploadPath, $fileName);
-        }
+                $this->categoriesModel->update($id,[
+                'name' => $name,
+                'image'=> $fileName,
+                'url' => 'uploads/images/categories/' . $fileName
+            ]);
 
+        }
+   
         $this->categoriesModel->update($id,[
-            'name' => $name,
-            'image'=> $fileName,
-            'url' => 'uploads/images/categories/' . $fileName
+            'name' => $name
         ]);
 
         return $this->respond([
             'message' => 'Categoría actualizada correctamente',
-            'files' => $fileName,
             'status' => 200
-
         ], 200);
     }
 

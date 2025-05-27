@@ -22,6 +22,7 @@ class WishListController extends ResourceController{
         $builder->join('products p', 'c.idProduct = p.idProduct', 'left');
         $builder->join('users u', 'c.idUser = u.idUser', 'left');
         $builder->join('images i', 'c.idProduct = i.idProduct', 'left');
+        $builder->where('p.status', 1);
         $builder->groupBy('p.idProduct, p.description, p.name, p.price, c.idWishList, u.lastName, u.email, c.created_at, c.updated_at');
         $result =  $builder->get()->getResultArray(); // o getResultArray()
         return $this->respond($result);
@@ -47,6 +48,7 @@ class WishListController extends ResourceController{
         $builder->join('users u', 'c.idUser = u.idUser', 'left');
         $builder->join('images i', 'c.idProduct = i.idProduct', 'left');
         $builder->where('c.idUser', $id);
+        $builder->where('p.status', 1);
         $builder->groupBy('p.idProduct, p.description, p.name, p.price, c.idWishList, u.lastName, u.email');
         $result =  $builder->get()->getResultArray(); // o getResultArray()
         return $this->respond($result);

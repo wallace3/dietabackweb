@@ -1,0 +1,328 @@
+CRITICAL - 2025-05-26 19:59:34 --> ErrorException: require_once(C:\xampp\htdocs\dietabackweb\app\vendor/autoload.php): Failed to open stream: No such file or directory
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 17.
+ 1 APPPATH\Controllers\StripeController.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require_once(C:\\xampp\\htdocs\\dietabackweb\\app\\vendor/autoload.php): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\StripeController.php', 17)
+ 2 APPPATH\Controllers\StripeController.php(17): require_once()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 20:05:25 --> ErrorException: require_once(C:\xampp\htdocs\dietabackweb\app\vendor/autoload.php): Failed to open stream: No such file or directory
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 17.
+ 1 APPPATH\Controllers\StripeController.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require_once(C:\\xampp\\htdocs\\dietabackweb\\app\\vendor/autoload.php): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\StripeController.php', 17)
+ 2 APPPATH\Controllers\StripeController.php(17): require_once()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 20:05:48 --> ErrorException: require_once(C:\xampp\htdocs\dietabackweb\app\vendor/autoload.php): Failed to open stream: No such file or directory
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 17.
+ 1 APPPATH\Controllers\StripeController.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require_once(C:\\xampp\\htdocs\\dietabackweb\\app\\vendor/autoload.php): Failed to open stream: No such file or directory', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\StripeController.php', 17)
+ 2 APPPATH\Controllers\StripeController.php(17): require_once()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 20:06:53 --> TypeError: Cannot access offset of type string on string
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 31.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 20:07:27 --> TypeError: Cannot access offset of type string on string
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 31.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 20:07:40 --> TypeError: Cannot access offset of type string on string
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 31.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 20:08:25 --> TypeError: Cannot access offset of type string on string
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 31.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 20:08:53 --> TypeError: Cannot access offset of type string on string
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 31.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 21:58:29 --> Error: Class "Stripe\Checkout\Customer" not found
+[Method: GET, Route: stripe/sessioninfo/cs_test_a1deTir82jzvG0uQG3iTA4upyuz5iVUT2O9eQiC8ySMWudV44rDLgto2nL]
+in APPPATH\Controllers\StripeController.php on line 69.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->sessionInfo('cs_test_a1deTir82jzvG0uQG3iTA4upyuz5iVUT2O9eQiC8ySMWudV44rDLgto2nL')
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 21:59:39 --> Error: Class "Stripe\Checkout\Customer" not found
+[Method: GET, Route: stripe/sessioninfo/cs_test_a1deTir82jzvG0uQG3iTA4upyuz5iVUT2O9eQiC8ySMWudV44rDLgto2nL]
+in APPPATH\Controllers\StripeController.php on line 72.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->sessionInfo('cs_test_a1deTir82jzvG0uQG3iTA4upyuz5iVUT2O9eQiC8ySMWudV44rDLgto2nL')
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 22:00:15 --> Stripe\Exception\UnexpectedValueException: Could not determine which URL to request: Stripe\Customer instance has invalid ID: 
+[Method: GET, Route: stripe/sessioninfo/cs_test_a1deTir82jzvG0uQG3iTA4upyuz5iVUT2O9eQiC8ySMWudV44rDLgto2nL]
+in VENDORPATH\stripe\stripe-php\lib\ApiResource.php on line 107.
+ 1 VENDORPATH\stripe\stripe-php\lib\ApiResource.php(121): Stripe\ApiResource::resourceUrl(null)
+ 2 VENDORPATH\stripe\stripe-php\lib\ApiResource.php(57): Stripe\ApiResource->instanceUrl()
+ 3 VENDORPATH\stripe\stripe-php\lib\Customer.php(127): Stripe\ApiResource->refresh()
+ 4 APPPATH\Controllers\StripeController.php(72): Stripe\Customer::retrieve(null)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->sessionInfo('cs_test_a1deTir82jzvG0uQG3iTA4upyuz5iVUT2O9eQiC8ySMWudV44rDLgto2nL')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 22:00:49 --> Stripe\Exception\UnexpectedValueException: Could not determine which URL to request: Stripe\Customer instance has invalid ID: 
+[Method: GET, Route: stripe/sessioninfo/cs_test_a1deTir82jzvG0uQG3iTA4upyuz5iVUT2O9eQiC8ySMWudV44rDLgto2nL]
+in VENDORPATH\stripe\stripe-php\lib\ApiResource.php on line 107.
+ 1 VENDORPATH\stripe\stripe-php\lib\ApiResource.php(121): Stripe\ApiResource::resourceUrl(null)
+ 2 VENDORPATH\stripe\stripe-php\lib\ApiResource.php(57): Stripe\ApiResource->instanceUrl()
+ 3 VENDORPATH\stripe\stripe-php\lib\Customer.php(127): Stripe\ApiResource->refresh()
+ 4 APPPATH\Controllers\StripeController.php(72): Stripe\Customer::retrieve(null)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->sessionInfo('cs_test_a1deTir82jzvG0uQG3iTA4upyuz5iVUT2O9eQiC8ySMWudV44rDLgto2nL')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 23:11:33 --> ErrorException: Undefined array key "idUser"
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 55.
+ 1 APPPATH\Controllers\StripeController.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "idUser"', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\StripeController.php', 55)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 23:12:11 --> ErrorException: Undefined array key "idUser"
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 55.
+ 1 APPPATH\Controllers\StripeController.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "idUser"', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\StripeController.php', 55)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 23:14:20 --> ErrorException: Undefined array key "idUser"
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 55.
+ 1 APPPATH\Controllers\StripeController.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "idUser"', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\StripeController.php', 55)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 23:18:36 --> ErrorException: Undefined array key "idUser"
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 55.
+ 1 APPPATH\Controllers\StripeController.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "idUser"', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\StripeController.php', 55)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 23:37:34 --> Error: Class "App\Controllers\OrderModel" not found
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 23:38:24 --> Error: Class "App\Models\StripeModel" not found
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 23:39:41 --> Error: Class "App\Models\StripeModel" not found
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 23:40:10 --> Error: Class "App\Models\StripeModel" not found
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 23:40:57 --> Error: Class "App\Models\StripeModel" not found
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 23:44:08 --> Error: Class "App\Models\StripeModel" not found
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 23:45:33 --> Error: Class "App\Models\StripeModel" not found
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 23:47:03 --> Error: Class "App\Models\StripeModel" not found
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 23:48:38 --> Error: Class "App\Models\StripeModel" not found
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 23:49:00 --> Error: Class "App\Models\StripeModel" not found
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 23:49:02 --> Error: Class "App\Models\StripeModel" not found
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 23:52:23 --> Error: Class "App\Models\StripeModel" not found
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 23:52:39 --> Error: Class "App\Models\StripeModel" not found
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 23:53:13 --> Error: Class "App\Models\StripeModel" not found
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')
+CRITICAL - 2025-05-26 23:54:24 --> Error: Class "App\Models\StripeModel" not found
+[Method: POST, Route: stripe/createCheckoutSession]
+in APPPATH\Controllers\StripeController.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\StripeController->createCheckoutSession()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\StripeController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')

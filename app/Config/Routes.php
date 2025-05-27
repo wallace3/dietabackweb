@@ -102,3 +102,8 @@ $routes->get('wishlist', 'WishListController::index');
 $routes->post('wishlist', 'WishListController::create');
 $routes->get('wishlist/get/(:num)', 'WishListController::getWishList/$1');
 $routes->delete('wishlist/(:num)', 'WishListController::delete/$1');
+
+/* STRIPE */
+$routes->post('stripe/createCheckoutSession', 'StripeController::createCheckoutSession');
+$routes->get('stripe/sessioninfo/(:segment)', 'StripeController::sessionInfo/$1');
+$routes->get('stripe/paidOrders', 'StripeController::paidOrders');

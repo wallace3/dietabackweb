@@ -65,10 +65,10 @@ class ProductsController extends ResourceController
     public function getProductsImage(){
         $db = \Config\Database::connect();
         $builder = $db->table('products p');
-        $builder->select(' p.idProduct,p.name,p.price,MIN(i.url) AS image_url');
+        $builder->select(' p.idProduct,p.name,p.price,MIN(i.url) AS image_url, p.description');
         $builder->join('images i', 'p.idProduct = i.idProduct', 'left');
         $builder->where('p.status', 1);
-        $builder->groupBy('p.idProduct, p.name, p.price');
+        $builder->groupBy('p.idProduct, p.name, p.price, p.description');
         $result =  $builder->get()->getResultArray(); // o getResultArray()
         return $this->respond($result);
     }
