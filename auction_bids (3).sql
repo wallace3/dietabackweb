@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-05-2025 a las 00:03:46
+-- Tiempo de generación: 28-05-2025 a las 01:43:05
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -179,15 +179,6 @@ CREATE TABLE `cart` (
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `cart`
---
-
-INSERT INTO `cart` (`idCart`, `idProduct`, `idUser`, `created_at`, `updated_at`) VALUES
-(13, 5, 9, '2025-05-20 18:55:02', '2025-05-20 18:55:02'),
-(14, 6, 9, '2025-05-20 18:55:05', '2025-05-20 18:55:05'),
-(15, 5, 9, '2025-05-20 19:03:28', '2025-05-20 19:03:28');
-
 -- --------------------------------------------------------
 
 --
@@ -209,23 +200,23 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`idCategory`, `name`, `image`, `url`, `status`, `created_at`, `updated_at`) VALUES
-(23, 'Cuadros', '1746814076_0628a9b7bba6b63a86de.jpg', 'uploads/images/categories/1746814076_0628a9b7bba6b63a86de.jpg', 1, '2025-05-09 18:07:56', '2025-05-09 18:07:56'),
+(23, 'Cuadros y Pinturas', '1746814076_0628a9b7bba6b63a86de.jpg', 'uploads/images/categories/1746814076_0628a9b7bba6b63a86de.jpg', 1, '2025-05-09 18:07:56', '2025-05-27 19:50:36'),
 (24, 'Joyería', '1746815689_4a5beb2341714d29dc1a.jpg', 'uploads/images/categories/1746815689_4a5beb2341714d29dc1a.jpg', 1, '2025-05-09 18:34:49', '2025-05-09 18:34:49'),
-(26, 'Destilados', '1746815974_72c2005ba4124108ab79.jpg', 'uploads/images/categories/1746815974_72c2005ba4124108ab79.jpg', 1, '2025-05-09 18:39:34', '2025-05-09 18:39:34'),
-(27, 'Arte Moderno', '1746816162_7e2029529ee2a133ace8.jpg', 'uploads/images/categories/1746816162_7e2029529ee2a133ace8.jpg', 1, '2025-05-09 18:42:42', '2025-05-09 18:42:42'),
+(26, 'Vinos y Destilados', '1746815974_72c2005ba4124108ab79.jpg', 'uploads/images/categories/1746815974_72c2005ba4124108ab79.jpg', 1, '2025-05-09 18:39:34', '2025-05-27 19:48:47'),
+(27, 'Arte', '1746816162_7e2029529ee2a133ace8.jpg', 'uploads/images/categories/1746816162_7e2029529ee2a133ace8.jpg', 1, '2025-05-09 18:42:42', '2025-05-27 19:49:40'),
 (28, 'Antigüedades', '1746816306_f330e384f204b95a4c15.jpg', 'uploads/images/categories/1746816306_f330e384f204b95a4c15.jpg', 1, '2025-05-09 18:45:06', '2025-05-09 18:45:06'),
 (29, 'Muebles', '1746816463_f617987e08c5fcceb749.jpg', 'uploads/images/categories/1746816463_f617987e08c5fcceb749.jpg', 1, '2025-05-09 18:47:43', '2025-05-09 18:47:43'),
 (30, 'Deportes', '1746816687_94f227fd0994e6025538.jpg', 'uploads/images/categories/1746816687_94f227fd0994e6025538.jpg', 1, '2025-05-09 18:51:27', '2025-05-09 18:51:27'),
 (32, 'Oportunidades', '1746816980_2e84d2d7eb7064b17dd2.jpg', 'uploads/images/categories/1746816980_2e84d2d7eb7064b17dd2.jpg', 1, '2025-05-09 18:56:20', '2025-05-09 18:56:20'),
 (33, 'Videojuegos', '1746817398_67facad83d53d7482edf.jpg', 'uploads/images/categories/1746817398_67facad83d53d7482edf.jpg', 1, '2025-05-09 19:03:18', '2025-05-09 19:03:18'),
-(34, 'Revistas & Comic\'s', '1746818205_a47cc9509e8e86b5c88a.jpg', 'uploads/images/categories/1746818205_a47cc9509e8e86b5c88a.jpg', 1, '2025-05-09 19:16:45', '2025-05-09 19:16:45'),
+(34, 'Revistas & Cómic\'s', '1746818205_a47cc9509e8e86b5c88a.jpg', 'uploads/images/categories/1746818205_a47cc9509e8e86b5c88a.jpg', 1, '2025-05-09 19:16:45', '2025-05-27 19:49:53'),
 (35, 'Coleccionables', '1747416209_99076a9c0d5845a4ae75.png', 'uploads/images/categories/1747416209_99076a9c0d5845a4ae75.png', 1, '2025-05-16 17:00:37', '2025-05-16 17:23:29'),
-(36, 'Bolsas', '1747675946_b2e50cb700f3d54b314d.jpeg', 'uploads/images/categories/1747675946_b2e50cb700f3d54b314d.jpeg', 1, '2025-05-19 17:16:28', '2025-05-19 17:32:26'),
+(36, 'Bolsos', '1747675946_b2e50cb700f3d54b314d.jpeg', 'uploads/images/categories/1747675946_b2e50cb700f3d54b314d.jpeg', 1, '2025-05-19 17:16:28', '2025-05-27 19:49:03'),
 (37, 'Libros', '1747676237_5018469f2e8e48969176.png', 'uploads/images/categories/1747676237_5018469f2e8e48969176.png', 1, '2025-05-19 17:37:05', '2025-05-19 17:37:17'),
 (38, 'Ropa', '1747676896_2d1d6a4b613e148f3c1a.png', 'uploads/images/categories/1747676896_2d1d6a4b613e148f3c1a.png', 1, '2025-05-19 17:48:03', '2025-05-19 17:48:16'),
 (39, 'Zapatos', '1747677024_df9ad9c5c65ac387f86f.png', 'uploads/images/categories/1747677024_df9ad9c5c65ac387f86f.png', 1, '2025-05-19 17:50:14', '2025-05-19 17:50:24'),
 (40, 'Artículos Religiosos', '1747677248_9802f23b17a5c39a5bef.jpg', 'uploads/images/categories/1747677248_9802f23b17a5c39a5bef.jpg', 1, '2025-05-19 17:54:08', '2025-05-19 17:54:08'),
-(41, 'Musica', '1747677322_9193e34fe753f6add9ad.jpg', 'uploads/images/categories/1747677322_9193e34fe753f6add9ad.jpg', 1, '2025-05-19 17:55:13', '2025-05-19 17:55:22'),
+(41, 'Música', '1747677322_9193e34fe753f6add9ad.jpg', 'uploads/images/categories/1747677322_9193e34fe753f6add9ad.jpg', 1, '2025-05-19 17:55:13', '2025-05-27 19:49:19'),
 (43, 'Únicos y de Colección', '1747677836_397fce99f9a2da9f39f8.png', 'uploads/images/categories/1747677836_397fce99f9a2da9f39f8.png', 1, '2025-05-19 18:03:56', '2025-05-19 18:03:56');
 
 -- --------------------------------------------------------
@@ -311,6 +302,62 @@ CREATE TABLE `invoice` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `orders`
+--
+
+CREATE TABLE `orders` (
+  `idOrder` int(11) NOT NULL,
+  `orderDate` datetime NOT NULL,
+  `idUser` int(11) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `total` int(50) NOT NULL,
+  `stripeId` text NOT NULL,
+  `paymentStatus` varchar(50) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `orders`
+--
+
+INSERT INTO `orders` (`idOrder`, `orderDate`, `idUser`, `status`, `total`, `stripeId`, `paymentStatus`, `created_at`, `updated_at`) VALUES
+(12, '2025-05-27 18:10:09', 9, 'pi_3RTS4WEEk2wvGozK15r7KKmQ', 30000, 'cs_test_a14arkUJlUT4wCchF1VrGYAdZ9mB6fGwH7BqOuorDaa98CWMlIReWfFMoH', 'unpaid', '2025-05-27 18:10:09', '2025-05-27 18:41:40'),
+(15, '2025-05-27 19:23:12', 9, 'pi_3RTT5oEEk2wvGozK18MY4ISk', 92000, 'cs_test_b1zkzO03m69BFG6fu4AEttAOUPWcs0JsT5pmMaReX8r1rSienotLSjI6xC', 'paid', '2025-05-27 19:23:12', '2025-05-27 19:23:25'),
+(16, '2025-05-27 19:26:45', 9, 'pi_3RTT9EEEk2wvGozK1eJfyLOj', 92000, 'cs_test_b1IHAf0c2Fnjl4aiztnGRkazDunmqFTIPrCyfafPRAALfmaXz3Oqrwk0bD', 'paid', '2025-05-27 19:26:45', '2025-05-27 19:26:56'),
+(17, '2025-05-27 19:32:36', 9, 'pi_3RTTEsEEk2wvGozK0fIiosxu', 12000, 'cs_test_a1nqCk6OYxXp926wGv1kwQZMf9bXxOnsw3Zp7vefJrjMRWrPDzhwJjWrZw', 'paid', '2025-05-27 19:32:36', '2025-05-27 19:32:45');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `order_details`
+--
+
+CREATE TABLE `order_details` (
+  `idOrderDetail` int(11) NOT NULL,
+  `idOrder` int(11) NOT NULL,
+  `idProduct` int(11) NOT NULL,
+  `price` float NOT NULL,
+  `id_stripe` text NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `order_details`
+--
+
+INSERT INTO `order_details` (`idOrderDetail`, `idOrder`, `idProduct`, `price`, `id_stripe`, `created_at`, `updated_at`) VALUES
+(10, 12, 5, 30000, '', '2025-05-27 18:10:09', '2025-05-27 18:10:09'),
+(13, 15, 6, 17000, '', '2025-05-27 19:23:12', '2025-05-27 19:23:12'),
+(14, 15, 8, 75000, '', '2025-05-27 19:23:12', '2025-05-27 19:23:12'),
+(15, 16, 6, 17000, '', '2025-05-27 19:26:45', '2025-05-27 19:26:45'),
+(16, 16, 8, 75000, '', '2025-05-27 19:26:45', '2025-05-27 19:26:45'),
+(17, 17, 7, 12000, '', '2025-05-27 19:32:36', '2025-05-27 19:32:36');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `products`
 --
 
@@ -336,10 +383,10 @@ INSERT INTO `products` (`idProduct`, `name`, `description`, `idCategory`, `idSub
 (2, 'Cuadro Van Hogh', 'Cuadro Van Gogh, 19x20 cm, oleo sobre tela, firmado.', 7, 0, 1, '3000.00', 0, '2025-04-01 17:56:24', '2025-05-16 20:20:59'),
 (3, 'Reloj Casio', 'Reloj casio, clásico, usado, funcional con correa de oro', 10, 2, 1, '2000', 0, '2025-04-05 01:06:49', '2025-05-16 20:21:17'),
 (4, 'Playera de messi autografiada', 'Playera de messi, barcelona, campeonato uefa champions league 2004', 10, 0, 1, '1500', 0, '2025-04-05 01:19:23', '2025-05-16 20:21:19'),
-(5, 'Cuadro da vinci', 'Cuadro de da vinci, obra amarilla, oleo sobre tela 45cm * 150cm', 23, 10, 1, '30000', 1, '2025-05-16 18:19:20', '2025-05-16 18:19:20'),
-(6, 'Reloj Rolex', 'Reloj Rolex en casa, corre de piel.', 24, 11, 1, '17000', 1, '2025-05-16 18:22:47', '2025-05-16 18:22:47'),
-(7, 'Champagne Moet', 'Champagne moet 3 piezas', 26, 20, 1, '12000', 1, '2025-05-16 18:28:10', '2025-05-16 18:28:10'),
-(8, 'Cuadro modreno, arte contemporaneo', 'Cuadro renancesista', 27, 10, 1, '75000', 1, '2025-05-16 18:31:17', '2025-05-16 18:31:17'),
+(5, 'Cuadro da vinci', 'Cuadro de da vinci, obra amarilla, oleo sobre tela 45cm * 150cm', 23, 10, 1, '30000', 0, '2025-05-16 18:19:20', '2025-05-27 18:54:28'),
+(6, 'Reloj Rolex', 'Reloj Rolex en casa, corre de piel.', 24, 11, 1, '17000', 0, '2025-05-16 18:22:47', '2025-05-27 19:26:56'),
+(7, 'Champagne Moet', 'Champagne moet 3 piezas', 26, 20, 1, '12000', 0, '2025-05-16 18:28:10', '2025-05-27 19:32:45'),
+(8, 'Cuadro modreno, arte contemporaneo', 'Cuadro renancesista', 27, 10, 1, '75000', 0, '2025-05-16 18:31:17', '2025-05-27 19:26:56'),
 (9, 'Mesa victoriana', 'Mesa victoriana del siglo XIX', 29, 10, 1, '10000', 1, '2025-05-16 18:43:28', '2025-05-16 18:43:28'),
 (10, 'Reloj del siglo X!X', 'Reloj de italia, siglo XIX', 28, 10, 1, '2400', 1, '2025-05-16 18:48:11', '2025-05-16 18:48:11'),
 (11, 'Jersey Michael Jordan', 'Jersey firmado michael jordan temporada 2000', 30, 2, 1, '2300', 1, '2025-05-16 20:04:17', '2025-05-16 20:04:17'),
@@ -583,6 +630,18 @@ ALTER TABLE `invoice`
   ADD PRIMARY KEY (`idInvoice`);
 
 --
+-- Indices de la tabla `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`idOrder`);
+
+--
+-- Indices de la tabla `order_details`
+--
+ALTER TABLE `order_details`
+  ADD PRIMARY KEY (`idOrderDetail`);
+
+--
 -- Indices de la tabla `products`
 --
 ALTER TABLE `products`
@@ -663,7 +722,7 @@ ALTER TABLE `bids`
 -- AUTO_INCREMENT de la tabla `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `idCart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idCart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `categories`
@@ -694,6 +753,18 @@ ALTER TABLE `images`
 --
 ALTER TABLE `invoice`
   MODIFY `idInvoice` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `idOrder` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT de la tabla `order_details`
+--
+ALTER TABLE `order_details`
+  MODIFY `idOrderDetail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
