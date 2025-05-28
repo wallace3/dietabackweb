@@ -148,4 +148,38 @@ class StripeController extends ResourceController
         return $this->respond($result);
     }
 
+    public function unpaidOrders()
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('orders o');
+        $builder->select('o.*, u.name, u.lastName, u.email, u.phone');
+        $builder->join('users u', 'u.idUser = o.idUser');
+        $builder->where('o.paymentStatus','unpaid');
+        $result =  $builder->get()->getResultArray(); 
+        return $this->respond($result);
+    }
+
+    public function history($id=null)
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('orders o');
+        $builder->select('o.*, u.name, u.lastName, u.email, u.phone');
+        $builder->join('users u', 'u.idUser = o.idUser');
+        $builder->where('o.idUser', $id);
+        $result =  $builder->get()->getResultArray(); 
+        return $this->respond($result);
+    }
+
+    public function orderDetails($id=null)
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('order_details od');
+        $builder->select('od.*, p.name, p.description, MIN(i.url) as image_url');
+        $builder->join('products p', 'p.idProduct = od.idProduct');
+        $builder->join('images i', 'i.idProduct = od.idProduct');
+        $builder->where('od.idOrder', $id);
+        $result =  $builder->get()->getResultArray(); 
+        return $this->respond($result);
+    }
+
 }
