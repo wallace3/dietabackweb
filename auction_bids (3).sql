@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-05-2025 a las 01:43:05
+-- Tiempo de generación: 29-05-2025 a las 01:31:03
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -217,7 +217,10 @@ INSERT INTO `categories` (`idCategory`, `name`, `image`, `url`, `status`, `creat
 (39, 'Zapatos', '1747677024_df9ad9c5c65ac387f86f.png', 'uploads/images/categories/1747677024_df9ad9c5c65ac387f86f.png', 1, '2025-05-19 17:50:14', '2025-05-19 17:50:24'),
 (40, 'Artículos Religiosos', '1747677248_9802f23b17a5c39a5bef.jpg', 'uploads/images/categories/1747677248_9802f23b17a5c39a5bef.jpg', 1, '2025-05-19 17:54:08', '2025-05-19 17:54:08'),
 (41, 'Música', '1747677322_9193e34fe753f6add9ad.jpg', 'uploads/images/categories/1747677322_9193e34fe753f6add9ad.jpg', 1, '2025-05-19 17:55:13', '2025-05-27 19:49:19'),
-(43, 'Únicos y de Colección', '1747677836_397fce99f9a2da9f39f8.png', 'uploads/images/categories/1747677836_397fce99f9a2da9f39f8.png', 1, '2025-05-19 18:03:56', '2025-05-19 18:03:56');
+(43, 'Únicos y de Colección', '1747677836_397fce99f9a2da9f39f8.png', 'uploads/images/categories/1747677836_397fce99f9a2da9f39f8.png', 1, '2025-05-19 18:03:56', '2025-05-19 18:03:56'),
+(44, 'Bienes inmuebles', '1748470801_44456e3224f705967dd7.png', 'uploads/images/categories/1748470801_44456e3224f705967dd7.png', 1, '2025-05-28 22:20:01', '2025-05-28 22:20:01'),
+(45, 'Vehículos', '1748470995_7244d64c0fee7cb04b28.png', 'uploads/images/categories/1748470995_7244d64c0fee7cb04b28.png', 1, '2025-05-28 22:23:15', '2025-05-28 22:23:15'),
+(46, 'Diversos', '1748472735_820c650c7c349fbc7349.png', 'uploads/images/categories/1748472735_820c650c7c349fbc7349.png', 1, '2025-05-28 22:52:15', '2025-05-28 22:52:15');
 
 -- --------------------------------------------------------
 
@@ -728,7 +731,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `idCategory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `idCategory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT de la tabla `contracts`
