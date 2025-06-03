@@ -74,7 +74,10 @@ class ProductsController extends ResourceController
     }
 
     public function getProductsByCategory($name = null){
+        header('Content-Type: text/html; charset=UTF-8');
         $db = \Config\Database::connect();
+        $category = $this->request->getGet('category');
+        $name = urldecode($category);
         $builder = $db->table('products p');
         $builder->select(' p.idProduct,p.name,p.price,MIN(i.url) AS image_url, p.description');
         $builder->join('images i', 'p.idProduct = i.idProduct', 'left');

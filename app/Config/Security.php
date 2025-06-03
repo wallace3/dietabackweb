@@ -17,6 +17,8 @@ class Security extends BaseConfig
      */
     public string $csrfProtection = 'cookie';
 
+    public bool $enableURLValidation = false;
+
     /**
      * --------------------------------------------------------------------------
      * CSRF Token Randomization

@@ -28,7 +28,7 @@ class CategoriesController extends ResourceController
 
         $builder = $db->table('categories c');
         $builder->select('c.idCategory, c.name, c.image, c.url, COUNT(p.idProduct) AS total_productos');
-        $builder->join('products p', 'c.idCategory = p.idCategory', 'left');
+        $builder->join('products p', 'c.idCategory = p.idCategory and p.status = 1', 'left');
         $builder->groupBy('c.idCategory, c.name, c.image, c.url');
         $result =  $builder->get()->getResultArray(); // o getResultArray()
         return $this->respond($result);
