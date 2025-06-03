@@ -45,6 +45,7 @@ $routes->post('products', 'ProductsController::create');
 $routes->put('products/(:num)', 'ProductsController::update/$1');
 $routes->put('products/deactivate/(:num)', 'ProductsController::deactivateProduct/$1');
 $routes->get('products/categories','ProductsController::getProductsImage');
+$routes->get('products/categories/name/(:segment)','ProductsController::getProductsByCategory/$1');
 
 /* IMAGES */
 $routes->get('images/(:num)', 'ImagesController::index/$1');
@@ -110,3 +111,6 @@ $routes->get('stripe/paidOrders', 'StripeController::paidOrders');
 $routes->get('stripe/unpaidOrders', 'StripeController::unpaidOrders');
 $routes->get('stripe/history/(:num)', 'StripeController::history/$1');
 $routes->get('stripe/orderDetails/(:num)', 'StripeController::orderDetails/$1');
+
+
+$routes->get('/', 'Home::index');

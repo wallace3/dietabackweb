@@ -1,0 +1,11 @@
+CRITICAL - 2025-05-23 02:23:44 --> ErrorException: Undefined variable $fileName
+[Method: POST, Route: auction/create]
+in APPPATH\Controllers\AuctionController.php on line 102.
+ 1 APPPATH\Controllers\AuctionController.php(102): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $fileName', 'C:\\xampp\\htdocs\\dietabackweb\\app\\Controllers\\AuctionController.php', 102)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuctionController->createAuction()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuctionController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(63): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\dietabackweb\\public\\index.php')

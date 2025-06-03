@@ -73,4 +73,17 @@ class ProductsController extends ResourceController
         return $this->respond($result);
     }
 
+    public function getProductsByCategory($name = null){
+        $db = \Config\Database::connect();
+        $builder = $db->table('products p');
+        $builder->select(' p.idProduct,p.name,p.price,MIN(i.url) AS image_url, p.description');
+        $builder->join('images i', 'p.idProduct = i.idProduct', 'left');
+        $builder->join('categories c', 'c.idCategory = p.idCategory', 'left');
+        $builder->where('p.status', 1);
+        $builder->like('c.name', $name);
+        $builder->groupBy('p.idProduct, p.name, p.price, p.description');
+        $result =  $builder->get()->getResultArray(); // o getResultArray()
+        return $this->respond($result);
+    }
+
 }
