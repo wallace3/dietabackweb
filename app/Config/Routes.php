@@ -116,4 +116,9 @@ $routes->get('stripe/orderDetails/(:num)', 'StripeController::orderDetails/$1');
 $routes->post('contact/send', 'ContactController::send');
 
 
+/* FACTURAMA */
+$routes->post('api/factura', 'InvoiceController::create');
+$routes->get('api/factura/types', 'InvoiceController::getTypes');
+
+
 $routes->get('/', 'Home::index');

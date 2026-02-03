@@ -163,8 +163,9 @@ class StripeController extends ResourceController
     {
         $db = \Config\Database::connect();
         $builder = $db->table('orders o');
-        $builder->select('o.*, u.name, u.lastName, u.email, u.phone');
+        $builder->select('o.*, u.name, u.lastName, u.email, u.phone, i.base64');
         $builder->join('users u', 'u.idUser = o.idUser');
+        $builder->join('invoices i','o.idOrder = i.idOrder', 'left');
         $builder->where('o.idUser', $id);
         $result =  $builder->get()->getResultArray(); 
         return $this->respond($result);
